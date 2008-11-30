@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+    <!DOCTYPE emails [
+        <!--ELEMENT email (to, from, subject, date, body)>
+        <!--ELEMENT to (addr+)-->
+        <!ELEMENT from (addr)>
+        <!ELEMENT subject (#PCDATA)>
+        <!ELEMENT date (#PCDATA)>
+        <!ELEMENT body (#PCDATA)>
+        <!ELEMENT addr (#PCDATA)>
+    ]>
+<emails>
+    <email>
+        <to>
+            <addr>bwdayley@novell.com</addr>
+            <addr>bwdayley@sfcn.org</addr>
+        </to>
+        <from>
+            <addr>ddayley@sfcn.org</addr>
+        </from>
+        <subject>
+        Update List
+        </subject>
+        <body>
+        Please add me to the list.
+        </body>
+    </email>
+    <email>
+        <to>
+            <addr>bwdayley@novell.com</addr>
+            <addr>bwdayley@sfcn.org</addr>
+        </to>
+        <from>
+            <addr>cdayley@sfcn.org</addr>
+        </from>
+        <subject>
+        More Updated List
+        </subject>
+        <body>
+        Please add me to the list also.
+        </body>
+    </email>
+</emails>
