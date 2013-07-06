@@ -1,0 +1,1 @@
+window.Expenses = Ember.Application.create();

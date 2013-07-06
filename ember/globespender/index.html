@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Globe Spender</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section id="todoapp">
+      <header id="header">
+        <h1>Globe Spender</h1>
+        <button class="create-expense"></button>
+      </header>
+
+			<section id="main">
+				<table id="expenses-list">
+					<tr>
+						<th><button class="destroy"></button>Date</th>
+						<th>CCY</th>
+						<th>Amount</th>
+						<th>Category</th>
+						<th>Place</th>
+						<th>Destination</th>
+						<th>Note</th>
+						<th>FX Rate to USD</th>
+					</tr>
+					<tr>
+						<td><button class="destroy"></button>2012-07-01</td>
+						<td>USD</td>
+						<td>$20.50</td>
+						<td>Lunch</td>
+						<td>New York</td>
+						<td></td>
+						<td>Dim Sum with Adam</td>
+						<td>1.00</td>
+					</tr>
+					<tr>
+						<td><button class="destroy"></button>2012-07-02</td>
+						<td>USD</td>
+						<td>$15.50</td>
+						<td>Lunch</td>
+						<td>New York</td>
+						<td></td>
+						<td>Sushi with Jon</td>
+						<td>1.00</td>
+					</tr>
+				</table>
+			</section>
+
+        <footer id="stats-category">
+					<h2>Monthly Expenses by Category (USD)</hr>
+					<table>
+						<tr>
+							<th>Category</th>
+							<th>Amount</th>
+						</tr>
+						<tr>
+							<td>Lunch</td>
+							<td>$35.50</td>
+						</tr>
+						<tr>
+							<td>Dinner</td>
+							<td>$40.50</td>
+						</tr>
+					</table>
+        </footer>
+        <footer id="location-category">
+					<h2>Daily Expenses by Location</hr>
+					<table>
+						<tr>
+							<th>Category</th>
+							<th>Amount (USD)</th>
+							<th>Amount (Local)</th>
+						</tr>
+						<tr>
+							<td>New York</td>
+							<td>$35.50</td>
+							<td>USD 35.50</td>
+						</tr>
+						<tr>
+							<td>Toronto</td>
+							<td>$40.50</td>
+							<td>CAD 42.50</td>
+						</tr>
+					</table>
+        </footer>
+    </section>
+
+    <footer id="info">
+    </footer>
+  </body>
+</html>
