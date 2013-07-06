@@ -1,8 +1,8 @@
-Todos.Store = DS.Store.extend({
+Expenses.Store = DS.Store.extend({
   revision: 12,
-  adapter: 'Todos.LSAdapter'
+  adapter: 'Expenses.LSAdapter'
 });
 
-Todos.LSAdapter = DS.LSAdapter.extend({
+Expenses.LSAdapter = DS.LSAdapter.extend({
   namespace: 'globespender-emberjs'
 });

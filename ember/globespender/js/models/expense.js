@@ -1,12 +1,12 @@
 Expenses.Expense = DS.Model.extend({
   category: DS.attr('string'),
-	amount; DS.attr('number'),
+	amount: DS.attr('number'),
   currency: DS.attr('string'),
 	date: DS.attr('date'),
   note: DS.attr('string'),
 	place: DS.attr('string'),
 	destination: DS.attr('string'),
-	fxrate: Ds.attr('number')
+	fxrate: DS.attr('number')
 });
 
 Expenses.Expense.FIXTURES = [
@@ -29,7 +29,7 @@ Expenses.Expense.FIXTURES = [
 		date: new Date('2013-07-02'),
 		note: 'delicious',
 		place: 'New York',
-		destination: ''
+		destination: '',
 		fxrate: 1.00
 	},
 ];

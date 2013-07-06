@@ -1,17 +1,27 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Ember.js • Globe Spender</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <section id="todoapp">
-      <header id="header">
-        <h1>Globe Spender</h1>
-        <button class="create-expense"></button>
-      </header>
+<head>
+	<meta charset="utf-8">
+	<title>Ember.js • Globe Spender</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<script type="text/x-handlebars" data-template-name="expenses">
+		<section id="expenseapp">
+			<header id="header">
+				<h1>Globe Spender</h1>
+				<button class="create-expense"></button>
+			</header>
 
+			<ul id="todo-list">
+			  {{#each controller}}
+			    <li>
+			      <input type="checkbox" class="toggle">
+			      <label>{{title}}</label><button class="destroy"></button>
+			    </li>
+			  {{/each}}
+			</ul>
+			
 			<section id="main">
 				<table id="expenses-list">
 					<tr>
@@ -47,46 +57,62 @@
 				</table>
 			</section>
 
-        <footer id="stats-category">
-					<h2>Monthly Expenses by Category (USD)</hr>
-					<table>
-						<tr>
-							<th>Category</th>
-							<th>Amount</th>
-						</tr>
-						<tr>
-							<td>Lunch</td>
-							<td>$35.50</td>
-						</tr>
-						<tr>
-							<td>Dinner</td>
-							<td>$40.50</td>
-						</tr>
-					</table>
-        </footer>
-        <footer id="location-category">
-					<h2>Daily Expenses by Location</hr>
-					<table>
-						<tr>
-							<th>Category</th>
-							<th>Amount (USD)</th>
-							<th>Amount (Local)</th>
-						</tr>
-						<tr>
-							<td>New York</td>
-							<td>$35.50</td>
-							<td>USD 35.50</td>
-						</tr>
-						<tr>
-							<td>Toronto</td>
-							<td>$40.50</td>
-							<td>CAD 42.50</td>
-						</tr>
-					</table>
-        </footer>
-    </section>
+			<footer id="stats-category">
+				<h2>Monthly Expenses by Category (USD)</h2>
+				<table>
+					<tr>
+						<th>Category</th>
+						<th>Amount</th>
+					</tr>
+					<tr>
+						<td>Lunch</td>
+						<td>$35.50</td>
+					</tr>
+					<tr>
+						<td>Dinner</td>
+						<td>$40.50</td>
+					</tr>
+				</table>
+			</footer>
+			<footer id="location-category">
+				<h2>Daily Expenses by Location</h2>
+				<table>
+					<tr>
+						<th>Category</th>
+						<th>Amount (USD)</th>
+						<th>Amount (Local)</th>
+					</tr>
+					<tr>
+						<td>New York</td>
+						<td>$35.50</td>
+						<td>USD 35.50</td>
+					</tr>
+					<tr>
+						<td>Toronto</td>
+						<td>$40.50</td>
+						<td>CAD 42.50</td>
+					</tr>
+				</table>
+			</footer>
+		</section>
+	</script>
 
-    <footer id="info">
-    </footer>
-  </body>
+	<footer id="info">
+	</footer>
+
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/handlebars.js"></script>
+	<script src="js/libs/ember.js"></script>
+	<script src="js/libs/ember-data.js"></script>
+	<script src="js/libs/local_storage_adapter.js"></script>
+
+	<script src="js/application.js"></script>
+	<script src="js/router.js"></script>
+
+	<script src="js/models/store.js"></script>
+	<script src="js/models/expense.js"></script>
+	<!--script src="js/controllers/todos_controller.js"></script>
+	<script src="js/controllers/todo_controller.js"></script>
+	<script src="js/views/edit_todo_view.js"></script -->
+</body>
 </html>
