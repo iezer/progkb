@@ -1,0 +1,19 @@
+user isaac
+user j
+user blahblahlblahblahblah
+user isaac
+add isaac 4111111111111111
+add isaac 5454545454545454
+add isaac 123
+add isaac a445
+balance isaac
+user dave
+add dave 5555555555554444
+add dave 123
+pay dave isaac 5.5 coolguy
+pay dave isaac $5.5 cool guy
+pay dave isaac $4 lunch
+pay isaac dave $3 dinner
+feed isaac
+balance isaac
+exit
