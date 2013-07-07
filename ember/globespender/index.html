@@ -41,23 +41,27 @@
 					</tr>
 					{{#each controller itemController="expense"}}
 					<tr>
-						<td><button class="destroy"></button>{{date}}</td>
-						<td>{{ccy}}</td>
-						<td>${{amount}}</td>
-						<td>{{category}}</td>
-						<td>{{place}}</td>
-						<td>{{destinate}}</td>
-						<td>{{note}}</td>
-						<td>{{fxrate}}</td>
-						<td>
-							<button class="destroy">Destroy</button>
 							{{#if isEditing}}
-				      	<button {{action 'doneEditing'}}>Done</button>
-								{{partial 'expense/edit'}}
+								<td>{{view Ember.TextField valueBinding='date'}}</td>
+								<td>{{view Ember.TextField valueBinding='ccy'}}</td>
+								<td>{{view Ember.TextField valueBinding='amount'}}</td>
+								<td>{{view Ember.TextField valueBinding='category'}}</td>
+								<td>{{view Ember.TextField valueBinding='place'}}</td>
+								<td>{{view Ember.TextField valueBinding='destination'}}</td>
+								<td>{{view Ember.TextField valueBinding='note'}}</td>
+								<td>{{view Ember.TextField valueBinding='fxrate'}}</td>
+								<td><button {{action 'doneEditing'}}>Done</button><button class="destroy">Destroy</button></td>
 				    	{{else}}
-				      	<button {{action 'edit'}}>Edit</button>
+								<td>{{date}}</td>
+								<td>{{ccy}}</td>
+								<td>${{amount}}</td>
+								<td>{{category}}</td>
+								<td>{{place}}</td>
+								<td>{{destinate}}</td>
+								<td>{{note}}</td>
+								<td>{{fxrate}}</td>
+								<td><button {{action 'edit'}}>Edit</button><button class="destroy">Destroy</button></td>
 				    	{{/if}}
-						</td>
 					</tr>
 					{{/each}}
 				</table>
