@@ -6,12 +6,16 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
       amount: 0.0,
       ccy: 'USD',
 			date: new Date(),
-			is_editing: true
+			is_editing: true,
+			fxrate: 1.0,
+			category: "lunch",
+			place: "New York"
     });
 
     // Save the new model
+		//expense.beginPropertyChanges();
     expense.save();
-		expense.beginPropertyChanges();
+
   },
 
 	uniqueCategories: function () {

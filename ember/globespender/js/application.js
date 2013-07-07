@@ -23,11 +23,22 @@ Expenses.ready = function () {
 Expenses.codeAddress = function (address) {
   geocoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
-      Expenses.map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
+
+			var contentString = '<b>Info</b>';
+      var infowindow = new google.maps.InfoWindow({
+			    content: contentString
+			});
+
+      Expenses.map.setCenter(results[0].geometry.location);			
+			var marker = new google.maps.Marker({
           map: Expenses.map,
-          position: results[0].geometry.location
+          position: results[0].geometry.location,
+					title: address
       });
+			
+			google.maps.event.addListener(marker, 'click', function() {
+			  infowindow.open(Expenses.map, marker);
+			});
 			console.log (address + ": " + results[0].geometry.location.lat() + ", " + results[0].geometry.location.lng());
     } else {
       alert('Geocode was not successful on "' + address +'" for the following reason: ' + status);
