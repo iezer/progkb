@@ -50,7 +50,10 @@
 								<td>{{view Ember.TextField valueBinding='destination'}}</td>
 								<td>{{view Ember.TextField valueBinding='note'}}</td>
 								<td>{{view Ember.TextField valueBinding='fxrate'}}</td>
-								<td><button {{action 'doneEditing'}}>Done</button><button class="destroy">Destroy</button></td>
+								<td>
+									<button {{action 'doneEditing'}}>Done</button>
+									<button {{action 'removeExpense'}}>Destroy</button>
+								</td>
 				    	{{else}}
 								<td>{{date}}</td>
 								<td>{{ccy}}</td>
@@ -60,7 +63,9 @@
 								<td>{{destinate}}</td>
 								<td>{{note}}</td>
 								<td>{{fxrate}}</td>
-								<td><button {{action 'edit'}}>Edit</button><button class="destroy">Destroy</button></td>
+								<td>
+									<button {{action 'edit'}}>Edit</button>
+								</td>
 				    	{{/if}}
 					</tr>
 					{{/each}}

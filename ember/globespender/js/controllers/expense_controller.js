@@ -8,5 +8,11 @@ Expenses.ExpenseController = Ember.ObjectController.extend({
   doneEditing: function() {
     this.set('isEditing', false);
     this.get('store').commit();
-  }
+  },
+
+	removeExpense: function () {
+	  var expense = this.get('model');
+	  expense.deleteRecord();
+	  expense.save();
+	}
 });
