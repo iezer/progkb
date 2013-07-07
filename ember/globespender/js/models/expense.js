@@ -7,7 +7,11 @@ Expenses.Expense = DS.Model.extend({
 	place: DS.attr('string'),
 	destination: DS.attr('string'),
 	fxrate: DS.attr('number'),
-	is_editing: DS.attr('boolean')
+	is_editing: DS.attr('boolean'),
+	
+	dateString: function() {
+    return this.get('date').toDateString();
+  }.property('date')
 });
 
 Expenses.Expense.FIXTURES = [
