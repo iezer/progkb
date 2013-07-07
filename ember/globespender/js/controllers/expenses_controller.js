@@ -1,4 +1,5 @@
 Expenses.ExpensesController = Ember.ArrayController.extend({
+	
   createExpense: function () {
     // Create the new Todo model
     var expense = Expenses.Expense.createRecord({
@@ -27,6 +28,10 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 	placeStats: function () {
 		places = this.mapProperty('place').uniq();
 
+		places.forEach(function (p){
+			Expenses.codeAddress(p);
+		});
+		
 		var retval = places.map(function (p) {
 			expenses_from_place = this.filter(function(item) {
 				if (item.get('place') == p) { return true; }
@@ -53,7 +58,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 			expenses_for_category = this.filter(function(item) {
 				if (item.get('category') == c) { return true; }
 			});
-			console.log(expenses_for_category.get('length'));
+
 			total_spent = expenses_for_category.reduce(function (prevVal, item) {
 				return prevVal + item.get('amount');
 			}, 0.0);
@@ -65,6 +70,12 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 		
 		return {	"total_number_of_days": total_number_of_days,
 							"categories_list": retval};
-	}.property('@each.category', '@each.date').cacheable()
+	}.property('@each.category', '@each.date').cacheable(),
 	
+	mapPlaces: function () {
+		results = this.placeStats();
+		results.forEach(function (p){
+			Expenses.codeAddress(p.place);
+		});
+	}.property('@each.place')
 });

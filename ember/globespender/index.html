@@ -4,6 +4,10 @@
 	<meta charset="utf-8">
 	<title>Ember.js • Globe Spender</title>
 	<link rel="stylesheet" href="style.css">
+	
+	<script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?sensor=false">
+  </script>
 </head>
 <body>
 	<script type="text/x-handlebars" data-template-name="expenses">
@@ -99,6 +103,10 @@
 
 	<footer id="info">
 	</footer>
+	<footer id="map-footer">
+		<div id="map_canvas" style="width:300; height:400px"></div>
+		{{mapPlaces}}
+	</footer>
 
 	<script src="js/libs/jquery.min.js"></script>
 	<script src="js/libs/handlebars.js"></script>
@@ -113,6 +121,8 @@
 	<script src="js/models/expense.js"></script>
 	<script src="js/controllers/expense_controller.js"></script>
 	<script src="js/controllers/expenses_controller.js"></script>
+	<script src="js/controllers/map_controller.js"></script>
 	<!-- script src="js/views/edit_todo_view.js"></script -->
+	
 </body>
 </html>
