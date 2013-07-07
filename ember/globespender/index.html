@@ -61,31 +61,23 @@
 			</section>
 
 			<footer id="stats-category">
-
-			<h2>Categories</h2>
-			<ul>			
-				{{#each category in uniqueCategories}}
-					<li>{{category}}</li>
-					{{/each}}
-			</ul>
-			
-				<h2>Monthly Expenses by Category (USD)</h2>
+				<h2>Monthly Expenses by Category (USD)</h2>	
 				<table>
 					<tr>
 						<th>Category</th>
-						<th>Amount</th>
+						<th>Monthly average</th>
 					</tr>
+					{{#each category in categoryStats.categories_list}}
 					<tr>
-						<td>Lunch</td>
-						<td>$35.50</td>
+						<td align="center">{{category.name}}</td>
+						<td align="center">{{category.monthly_average}}</td>
 					</tr>
-					<tr>
-						<td>Dinner</td>
-						<td>$40.50</td>
-					</tr>
+					{{/each}}
 				</table>
 			</footer>
+			
 			<footer id="location-category">
+				<h2>Daily Expenses by City (USD)</h2>
 				<table>
 					<tr>
 						<th>Location</th>
@@ -100,11 +92,10 @@
 					</tr>
 					{{/each}}
 				</table>
+				<p>Total days tracked: {{categoryStats.total_number_of_days}}</p>
 			</footer>
 		</section>
 	</script>
-
-
 
 	<footer id="info">
 	</footer>

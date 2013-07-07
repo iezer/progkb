@@ -31,6 +31,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 			expenses_from_place = this.filter(function(item) {
 				if (item.get('place') == p) { return true; }
 			});
+			
 			number_of_days = expenses_from_place.mapProperty('dateString').uniq().get('length');
 			total_spent = expenses_from_place.reduce(function (prevVal, item) {
 				return prevVal + item.get('amount');
@@ -42,6 +43,28 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 		}, this);
 		
 		return retval;
-	}.property('@each.place', '@each.date').cacheable()
+	}.property('@each.place', '@each.date').cacheable(),
+	
+	categoryStats: function () {
+		total_number_of_days = this.mapProperty('dateString').uniq().get('length');
+		categories = this.mapProperty('category').uniq();
+
+		var retval = categories.map(function (c) {
+			expenses_for_category = this.filter(function(item) {
+				if (item.get('category') == c) { return true; }
+			});
+			console.log(expenses_for_category.get('length'));
+			total_spent = expenses_for_category.reduce(function (prevVal, item) {
+				return prevVal + item.get('amount');
+			}, 0.0);
+			return { 	"name": c,
+								"total_number_of_days": total_number_of_days,
+								"total_spent": total_spent,
+								"monthly_average": (total_spent/total_number_of_days).toFixed(2) };
+		}, this);
+		
+		return {	"total_number_of_days": total_number_of_days,
+							"categories_list": retval};
+	}.property('@each.category', '@each.date').cacheable()
 	
 });
