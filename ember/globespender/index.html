@@ -6,26 +6,30 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<script type="text/x-handlebars" id="expense/_edit">
+			</td>
+		</tr>
+		<tr>
+			<td>{{view Ember.TextField valueBinding='date'}}</td>
+			<td>{{view Ember.TextField valueBinding='ccy'}}</td>
+			<td>{{view Ember.TextField valueBinding='amount'}}</td>
+			<td>{{view Ember.TextField valueBinding='category'}}</td>
+			<td>{{view Ember.TextField valueBinding='place'}}</td>
+			<td>{{view Ember.TextField valueBinding='destination'}}</td>
+			<td>{{view Ember.TextField valueBinding='fxrate'}}
+  </script>
+
 	<script type="text/x-handlebars" data-template-name="expenses">
 		<section id="expenseapp">
 			<header id="header">
 				<h1>Globe Spender</h1>
 				<button class="create-expense"></button>
 			</header>
-
-			<ul id="todo-list">
-			  {{#each controller}}
-			    <li>
-			      <input type="checkbox" class="toggle">
-			      <label>{{title}}</label><button class="destroy"></button>
-			    </li>
-			  {{/each}}
-			</ul>
 			
 			<section id="main">
-				<table id="expenses-list">
+				<table id="expense-list">
 					<tr>
-						<th><button class="destroy"></button>Date</th>
+						<th>Date</th>
 						<th>CCY</th>
 						<th>Amount</th>
 						<th>Category</th>
@@ -33,28 +37,31 @@
 						<th>Destination</th>
 						<th>Note</th>
 						<th>FX Rate to USD</th>
+						<th>Actions</th>
 					</tr>
+					{{#each controller itemController="expense"}}
 					<tr>
-						<td><button class="destroy"></button>2012-07-01</td>
-						<td>USD</td>
-						<td>$20.50</td>
-						<td>Lunch</td>
-						<td>New York</td>
-						<td></td>
-						<td>Dim Sum with Adam</td>
-						<td>1.00</td>
+						<td><button class="destroy"></button>{{date}}</td>
+						<td>{{ccy}}</td>
+						<td>${{amount}}</td>
+						<td>{{category}}</td>
+						<td>{{place}}</td>
+						<td>{{destinate}}</td>
+						<td>{{note}}</td>
+						<td>{{fxrate}}</td>
+						<td>
+							<button class="destroy">Destroy</button>
+							{{#if isEditing}}
+				      	<button {{action 'doneEditing'}}>Done</button>
+								{{partial 'expense/edit'}}
+				    	{{else}}
+				      	<button {{action 'edit'}}>Edit</button>
+				    	{{/if}}
+						</td>
 					</tr>
-					<tr>
-						<td><button class="destroy"></button>2012-07-02</td>
-						<td>USD</td>
-						<td>$15.50</td>
-						<td>Lunch</td>
-						<td>New York</td>
-						<td></td>
-						<td>Sushi with Jon</td>
-						<td>1.00</td>
-					</tr>
+					{{/each}}
 				</table>
+			
 			</section>
 
 			<footer id="stats-category">
@@ -97,6 +104,8 @@
 		</section>
 	</script>
 
+
+
 	<footer id="info">
 	</footer>
 
@@ -111,8 +120,8 @@
 
 	<script src="js/models/store.js"></script>
 	<script src="js/models/expense.js"></script>
+	<script src="js/controllers/expense_controller.js"></script>
 	<!--script src="js/controllers/todos_controller.js"></script>
-	<script src="js/controllers/todo_controller.js"></script>
 	<script src="js/views/edit_todo_view.js"></script -->
 </body>
 </html>

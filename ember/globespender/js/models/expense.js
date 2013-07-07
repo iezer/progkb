@@ -31,5 +31,5 @@ Expenses.Expense.FIXTURES = [
 		place: 'New York',
 		destination: '',
 		fxrate: 1.00
-	},
+	}
 ];
