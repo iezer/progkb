@@ -4,6 +4,9 @@ Expenses.mapController = Em.Object.create({
 	handleClick: function (x) {
 		//this.markersForMap.pushObject( Expenses.Marker.create({latLng: x.latLng}) );
 		console.log ("map clicked");
+		console.log (this);
+		//this.markersForMap.map = function(item) { item.infoWindow.close();};
+
 	},
 	markersForMapDidChange: function () {
 		var that = this;

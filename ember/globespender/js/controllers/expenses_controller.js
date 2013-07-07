@@ -32,10 +32,6 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 	
 	placeStats: function () {
 		places = this.mapProperty('place').uniq();
-
-		places.forEach(function (p){
-			Expenses.codeAddress(p);
-		});
 		
 		var retval = places.map(function (p) {
 			expenses_from_place = this.filter(function(item) {
@@ -46,10 +42,17 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 			total_spent = expenses_from_place.reduce(function (prevVal, item) {
 				return prevVal + item.get('amount');
 			}, 0.0);
-			return { 	"place": p,
+			retPlace = { 	"place": p,
 								"number_of_days": number_of_days,
 								"total_spent": total_spent,
 								"average": (total_spent/number_of_days).toFixed(2) };
+
+			infoBox = "<div><b>" + retPlace.place +"</b><br>" +
+								"You spent " + retPlace.number_of_days + " days here<br>" +
+								"and averaged $" + retPlace.average + " per day.</div";
+								
+			Expenses.codeAddress(retPlace.place, infoBox);
+			return retPlace;
 		}, this);
 		
 		return retval;
@@ -76,11 +79,5 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 		return {	"total_number_of_days": total_number_of_days,
 							"categories_list": retval};
 	}.property('@each.category', '@each.date').cacheable(),
-	
-	mapPlaces: function () {
-		results = this.placeStats();
-		results.forEach(function (p){
-			Expenses.codeAddress(p.place);
-		});
-	}.property('@each.place')
+
 });

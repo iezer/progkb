@@ -28,6 +28,7 @@ Expenses.ExpenseController = Ember.ObjectController.extend({
 
 	removeExpense: function () {
 	  var expense = this.get('model');
+		expense.endPropertyChanges();
 	  expense.deleteRecord();
 	  expense.save();
 	}

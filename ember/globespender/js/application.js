@@ -20,13 +20,13 @@ Expenses.ready = function () {
   Expenses.initMap();
 };
 
-Expenses.codeAddress = function (address) {
-  geocoder.geocode( { 'address': address}, function(results, status) {
+Expenses.codeAddress = function (address, infoBox) {
+  geocoder.geocode( {'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
 
-			var contentString = '<b>Info</b>';
+			//var contentString = '<b>Info</b>';
       var infowindow = new google.maps.InfoWindow({
-			    content: contentString
+			    content: infoBox
 			});
 
       Expenses.map.setCenter(results[0].geometry.location);			
@@ -37,8 +37,13 @@ Expenses.codeAddress = function (address) {
       });
 			
 			google.maps.event.addListener(marker, 'click', function() {
-			  infowindow.open(Expenses.map, marker);
+				infowindow.open(Expenses.map, marker);
 			});
+			
+			google.maps.event.addListener(Expenses.map,'click',function(){
+				infowindow.close();
+			});
+			
 			console.log (address + ": " + results[0].geometry.location.lat() + ", " + results[0].geometry.location.lng());
     } else {
       alert('Geocode was not successful on "' + address +'" for the following reason: ' + status);
