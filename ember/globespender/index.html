@@ -86,37 +86,19 @@
 				</table>
 			</footer>
 			<footer id="location-category">
-			
-				<h2>Places</h2>
-				<ul>			
-					{{#each place in uniquePlaces}}
-						<li>{{place}}</li>
-						{{/each}}
-				</ul>
-			
-				<ul>			
-					{{#each place in placeStats}}
-						<li>{{place}}</li>
-						{{/each}}
-				</ul>
-				
-				<h2>Daily Expenses by Location</h2>
 				<table>
 					<tr>
-						<th>Category</th>
-						<th>Amount (USD)</th>
-						<th>Amount (Local)</th>
+						<th>Location</th>
+						<th># of Days</th>
+						<th>Average Daily Spending</th>
 					</tr>
+					{{#each place in placeStats}}
 					<tr>
-						<td>New York</td>
-						<td>$35.50</td>
-						<td>USD 35.50</td>
+						<td align="center">{{place.place}}</td>
+						<td align="center">{{place.number_of_days}}</td>
+						<td align="center">${{place.average}}</td>
 					</tr>
-					<tr>
-						<td>Toronto</td>
-						<td>$40.50</td>
-						<td>CAD 42.50</td>
-					</tr>
+					{{/each}}
 				</table>
 			</footer>
 		</section>

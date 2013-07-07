@@ -35,8 +35,10 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 			total_spent = expenses_from_place.reduce(function (prevVal, item) {
 				return prevVal + item.get('amount');
 			}, 0.0);
-
-			[p, number_of_days, total_spent, total_spent/number_of_days];
+			return { 	"place": p,
+								"number_of_days": number_of_days,
+								"total_spent": total_spent,
+								"average": (total_spent/number_of_days).toFixed(2) };
 		}, this);
 		
 		return retval;
