@@ -11,6 +11,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 
     // Save the new model
     expense.save();
+		expense.beginPropertyChanges();
   },
 
 	uniqueCategories: function () {

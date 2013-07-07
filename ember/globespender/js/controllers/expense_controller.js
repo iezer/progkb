@@ -3,6 +3,7 @@ Expenses.ExpenseController = Ember.ObjectController.extend({
   edit: function() {
     this.set('isEditing', true);
 		this.get('model').set('is_editing', true);
+		this.get('model').beginPropertyChanges();
   },
 
   doneEditing: function() {		
@@ -17,6 +18,7 @@ Expenses.ExpenseController = Ember.ObjectController.extend({
 			}
 			this.get('model').set('date', new_date);
     	this.get('store').commit();
+			this.get('model').endPropertyChanges();
 		} catch (err) {
 			alert (err + "Invalid Date " + this.get('model').get('date'));
 		}
