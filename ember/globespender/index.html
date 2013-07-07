@@ -11,14 +11,14 @@
 </head>
 <body>
 	<script type="text/x-handlebars" data-template-name="expenses">
-		<section id="expenseapp">
-			<header id="header">
-				<h1>Globe Spender</h1>
-				<button {{action 'createExpense'}}>Create</button
-			</header>
+			<div id="expenses_table">
 			
-			<section id="main">
-				<table id="expense-list">
+				<header id="header">
+					<h1>Globe Spender</h1>
+					<button {{action 'createExpense'}}>Create</button
+				</header>
+				
+				<table>
 					<tr>
 						<th>Date</th>
 						<th>CCY</th>
@@ -62,9 +62,9 @@
 					{{/each}}
 				</table>
 			
-			</section>
+			</div>
 
-			<footer id="stats-category">
+			<div id="stats">
 				<h2>Monthly Expenses by Category (USD)</h2>	
 				<table>
 					<tr>
@@ -78,9 +78,7 @@
 					</tr>
 					{{/each}}
 				</table>
-			</footer>
 			
-			<footer id="location-category">
 				<h2>Daily Expenses by City (USD)</h2>
 				<table>
 					<tr>
@@ -97,15 +95,11 @@
 					{{/each}}
 				</table>
 				<p>Total days tracked: {{categoryStats.total_number_of_days}}</p>
-			</footer>
-		</section>
+			</div>
 	</script>
 
-	<footer id="info">
-	</footer>
-	<footer id="map-footer">
-		<div id="map_canvas" style="width:300; height:400px"></div>
-	</footer>
+	<div id="map_canvas"></div>
+
 
 	<script src="js/libs/jquery.min.js"></script>
 	<script src="js/libs/handlebars.js"></script>
