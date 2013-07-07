@@ -20,33 +20,48 @@ Expenses.ready = function () {
   Expenses.initMap();
 };
 
-Expenses.codeAddress = function (address, infoBox) {
-  geocoder.geocode( {'address': address}, function(results, status) {
+Expenses.codeAddress = function (place, infoBox) {
+  geocoder.geocode( {'address': place.place}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
 
 			//var contentString = '<b>Info</b>';
-      var infowindow = new google.maps.InfoWindow({
+      var infoWindow = new google.maps.InfoWindow({
 			    content: infoBox
 			});
 
       Expenses.map.setCenter(results[0].geometry.location);			
-			var marker = new google.maps.Marker({
+		/*	var marker = new google.maps.Marker({
           map: Expenses.map,
           position: results[0].geometry.location,
-					title: address
-      });
+					title: place.place
+      }); */
 			
-			google.maps.event.addListener(marker, 'click', function() {
-				infowindow.open(Expenses.map, marker);
+			console.log (place.average + " " + place.average * 100);
+			var circleOptions = {
+	      strokeColor: '#FF0000',
+	      strokeOpacity: 0.8,
+	      strokeWeight: 2,
+	      fillColor: '#FF0000',
+	      fillOpacity: 0.35,
+	      map: Expenses.map,
+				clickable:true,
+	      center: results[0].geometry.location,
+	      radius: 20000 * place.average
+	    };
+	    var cityCircle = new google.maps.Circle(circleOptions);
+			
+			google.maps.event.addListener(cityCircle, 'click', function () {
+				infoWindow.setPosition(results[0].geometry.location);
+				infoWindow.open(Expenses.map);
 			});
 			
-			google.maps.event.addListener(Expenses.map,'click',function(){
-				infowindow.close();
+			google.maps.event.addListener(Expenses.map,'click', function () {
+				infoWindow.close();
 			});
 			
-			console.log (address + ": " + results[0].geometry.location.lat() + ", " + results[0].geometry.location.lng());
+			console.log (place.place + ": " + results[0].geometry.location.lat() + ", " + results[0].geometry.location.lng());
     } else {
-      alert('Geocode was not successful on "' + address +'" for the following reason: ' + status);
+      alert('Geocode was not successful on "' + place.place +'" for the following reason: ' + status);
     }
   });
 }

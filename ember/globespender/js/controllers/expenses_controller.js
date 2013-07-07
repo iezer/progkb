@@ -51,7 +51,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 								"You spent " + retPlace.number_of_days + " days here<br>" +
 								"and averaged $" + retPlace.average + " per day.</div";
 								
-			Expenses.codeAddress(retPlace.place, infoBox);
+			Expenses.codeAddress(retPlace, infoBox);
 			return retPlace;
 		}, this);
 		
@@ -73,7 +73,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 			return { 	"name": c,
 								"total_number_of_days": total_number_of_days,
 								"total_spent": total_spent,
-								"monthly_average": (total_spent/total_number_of_days).toFixed(2) };
+								"monthly_average": (total_spent/total_number_of_days * 30).toFixed(2) };
 		}, this);
 		
 		return {	"total_number_of_days": total_number_of_days,
