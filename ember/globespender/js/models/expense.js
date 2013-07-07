@@ -6,7 +6,8 @@ Expenses.Expense = DS.Model.extend({
   note: DS.attr('string'),
 	place: DS.attr('string'),
 	destination: DS.attr('string'),
-	fxrate: DS.attr('number')
+	fxrate: DS.attr('number'),
+	is_editing: DS.attr('boolean')
 });
 
 Expenses.Expense.FIXTURES = [

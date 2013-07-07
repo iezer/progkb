@@ -1,12 +1,13 @@
 Expenses.ExpenseController = Ember.ObjectController.extend({
-  isEditing: false,
 
   edit: function() {
     this.set('isEditing', true);
+		this.get('model').set('is_editing', true);
   },
 
   doneEditing: function() {
     this.set('isEditing', false);
+		this.get('model').set('is_editing', false);
     this.get('store').commit();
   },
 

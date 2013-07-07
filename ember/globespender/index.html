@@ -6,24 +6,11 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<script type="text/x-handlebars" id="expense/_edit">
-			</td>
-		</tr>
-		<tr>
-			<td>{{view Ember.TextField valueBinding='date'}}</td>
-			<td>{{view Ember.TextField valueBinding='ccy'}}</td>
-			<td>{{view Ember.TextField valueBinding='amount'}}</td>
-			<td>{{view Ember.TextField valueBinding='category'}}</td>
-			<td>{{view Ember.TextField valueBinding='place'}}</td>
-			<td>{{view Ember.TextField valueBinding='destination'}}</td>
-			<td>{{view Ember.TextField valueBinding='fxrate'}}
-  </script>
-
 	<script type="text/x-handlebars" data-template-name="expenses">
 		<section id="expenseapp">
 			<header id="header">
 				<h1>Globe Spender</h1>
-				<button class="create-expense"></button>
+				<button {{action 'createExpense'}}>Create</button
 			</header>
 			
 			<section id="main">
@@ -41,7 +28,7 @@
 					</tr>
 					{{#each controller itemController="expense"}}
 					<tr>
-							{{#if isEditing}}
+							{{#if is_editing }}
 								<td>{{view Ember.TextField valueBinding='date'}}</td>
 								<td>{{view Ember.TextField valueBinding='ccy'}}</td>
 								<td>{{view Ember.TextField valueBinding='amount'}}</td>
@@ -130,7 +117,7 @@
 	<script src="js/models/store.js"></script>
 	<script src="js/models/expense.js"></script>
 	<script src="js/controllers/expense_controller.js"></script>
-	<!--script src="js/controllers/todos_controller.js"></script>
-	<script src="js/views/edit_todo_view.js"></script -->
+	<script src="js/controllers/expenses_controller.js"></script>
+	<!-- script src="js/views/edit_todo_view.js"></script -->
 </body>
 </html>
