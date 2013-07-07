@@ -10,5 +10,13 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 
     // Save the new model
     expense.save();
-  }
+  },
+
+	uniqueCategories: function () {
+	  return this.mapProperty('category').uniq();
+	}.property('@each.category'),
+	
+	uniquePlaces: function () {
+	  return this.mapProperty('place').uniq();
+	}.property('@each.place')
 });

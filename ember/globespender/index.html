@@ -61,6 +61,14 @@
 			</section>
 
 			<footer id="stats-category">
+
+			<h2>Categories</h2>
+			<ul>			
+				{{#each category in uniqueCategories}}
+					<li>{{category}}</li>
+					{{/each}}
+			</ul>
+			
 				<h2>Monthly Expenses by Category (USD)</h2>
 				<table>
 					<tr>
@@ -78,6 +86,14 @@
 				</table>
 			</footer>
 			<footer id="location-category">
+			
+				<h2>Places</h2>
+				<ul>			
+					{{#each place in uniquePlaces}}
+						<li>{{place}}</li>
+						{{/each}}
+				</ul>
+			
 				<h2>Daily Expenses by Location</h2>
 				<table>
 					<tr>
