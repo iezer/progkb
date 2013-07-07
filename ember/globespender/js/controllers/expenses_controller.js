@@ -31,7 +31,12 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 			expenses_from_place = this.filter(function(item) {
 				if (item.get('place') == p) { return true; }
 			});
-			return [p, expenses_from_place.mapProperty('dateString').uniq().get('length')];
+			number_of_days = expenses_from_place.mapProperty('dateString').uniq().get('length');
+			total_spent = expenses_from_place.reduce(function (prevVal, item) {
+				return prevVal + item.get('amount');
+			}, 0.0);
+
+			[p, number_of_days, total_spent, total_spent/number_of_days];
 		}, this);
 		
 		return retval;
