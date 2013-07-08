@@ -1,5 +1,19 @@
 window.Expenses = Ember.Application.create({
-	markersDisplayed: []
+	markersDisplayed: [],
+	propertyChanges: false,
+	
+	getPropertyLock: function() {
+		if (this.propertyChanges) {
+			return false;
+		} else {
+			this.propertyChanges = true;
+			return true;
+		}
+	},
+	
+	releasePropertyLock: function() {
+		this.propertyChanges = false;
+	}
 });
 
 Expenses.initMap = function () {

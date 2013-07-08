@@ -1,6 +1,11 @@
 Expenses.ExpenseController = Ember.ObjectController.extend({
 
-  edit: function() {
+  edit: function() {	
+		if( !Expenses.getPropertyLock() ) {
+			console.log("You can only edit one expense at a time.");
+			return;
+		}
+		
     this.set('isEditing', true);
 		this.get('model').set('is_editing', true);
 		this.get('model').beginPropertyChanges();
@@ -27,6 +32,7 @@ Expenses.ExpenseController = Ember.ObjectController.extend({
 		
 		this.get('model').endPropertyChanges();
 		console.log ("controller.done_editing endPropertychanges");
+		Expenses.releasePropertyLock();
   },
 
 	removeExpense: function () {

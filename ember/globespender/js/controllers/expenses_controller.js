@@ -1,6 +1,11 @@
 Expenses.ExpensesController = Ember.ArrayController.extend({
 	
   createExpense: function () {
+		if( !Expenses.getPropertyLock() ) {
+			console.log("Please finish editing before creating a new expense.");
+			return;
+		}
+		
     // Create the new Todo model
     var expense = Expenses.Expense.createRecord({
       amount: 0.0,
@@ -14,7 +19,6 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 
     // Save the new model
 		expense.beginPropertyChanges();
-		console.log ("expenses controller.creatExpense beginPropertychanges");
     expense.save();
 
   },
