@@ -38,6 +38,7 @@ Expenses.ExpenseController = Ember.ObjectController.extend({
 	removeExpense: function () {
 	  var expense = this.get('model');
 		expense.endPropertyChanges();
+		Expenses.releasePropertyLock();
 		console.log ("controller.remove endPropertychanges");
 	  expense.deleteRecord();
 	  expense.save();
