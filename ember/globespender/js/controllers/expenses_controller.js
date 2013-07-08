@@ -1,25 +1,19 @@
 Expenses.ExpensesController = Ember.ArrayController.extend({
 	
   createExpense: function () {
-	/*	if( !Expenses.getPropertyLock() ) {
-			console.log("Please finish editing before creating a new expense.");
-			return;
-		}*/
-		
-    // Create the new Todo model
+
+    // Create the new model
     var expense = Expenses.Expense.createRecord({
       amount: 0.0,
       currency: 'USD',
 			spent_at: new Date(),
-			is_editing: true,
 			fxrate: 1.0,
 			category: "lunch",
 			place: "New York"
     });
 
-    // Save the new model
-		expense.beginPropertyChanges();
-    //expense.save();
+		expense.set('is_editing', false);		
+    expense.save();
   },
 
 	uniqueCategories: function () {
