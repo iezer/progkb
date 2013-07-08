@@ -13,7 +13,7 @@ Expenses.Store = DS.Store.extend({
 });
 
 Expenses.LSAdapter = DS.LSAdapter.extend({
-  namespace: 'expenses-emberj4'
+  namespace: 'expenses-emberj5'
 });
 
 
