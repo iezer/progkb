@@ -4,6 +4,7 @@ Expenses.ExpenseController = Ember.ObjectController.extend({
     this.set('isEditing', true);
 		this.get('model').set('is_editing', true);
 		this.get('model').beginPropertyChanges();
+		console.log ("controller.edit beginPropertychanges");
   },
 
   doneEditing: function() {		
@@ -19,16 +20,19 @@ Expenses.ExpenseController = Ember.ObjectController.extend({
 			
 			this.set('isEditing', false);
 			this.get('model').set('is_editing', false);		
-			this.get('model').endPropertyChanges();
     	this.get('store').commit();
 		} catch (err) {
 			alert (err + "Invalid Date " + this.get('model').get('date'));
 		}
+		
+		this.get('model').endPropertyChanges();
+		console.log ("controller.done_editing endPropertychanges");
   },
 
 	removeExpense: function () {
 	  var expense = this.get('model');
 		expense.endPropertyChanges();
+		console.log ("controller.remove endPropertychanges");
 	  expense.deleteRecord();
 	  expense.save();
 	}

@@ -34,7 +34,7 @@
 					<tr>
 							{{#if is_editing }}
 								<td>{{view Ember.TextField valueBinding='date'}}</td>
-								<td>{{view Ember.TextField valueBinding='ccy'}}</td>
+								<td>{{view Ember.TextField valueBinding='currency'}}</td>
 								<td>{{view Ember.TextField valueBinding='amount'}}</td>
 								<td>{{view Ember.TextField valueBinding='category'}}</td>
 								<td>{{view Ember.TextField valueBinding='place'}}</td>
@@ -47,7 +47,7 @@
 								</td>
 				    	{{else}}
 								<td>{{dateString}}</td>
-								<td>{{ccy}}</td>
+								<td>{{currency}}</td>
 								<td>${{amount}}</td>
 								<td>{{category}}</td>
 								<td>{{place}}</td>

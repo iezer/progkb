@@ -4,7 +4,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
     // Create the new Todo model
     var expense = Expenses.Expense.createRecord({
       amount: 0.0,
-      ccy: 'USD',
+      currency: 'USD',
 			date: new Date(),
 			is_editing: true,
 			fxrate: 1.0,
