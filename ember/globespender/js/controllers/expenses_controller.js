@@ -13,7 +13,8 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
     });
 
     // Save the new model
-		//expense.beginPropertyChanges();
+		expense.beginPropertyChanges();
+		console.log ("expenses controller.creatExpense beginPropertychanges");
     expense.save();
 
   },
