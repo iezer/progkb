@@ -56,8 +56,9 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 								"total_spent": total_spent,
 								"average": (total_spent/number_of_days).toFixed(2) };
 
+			days = retPlace.number_of_days == 1 ? "day" : "days";
 			infoBox = "<div><b>" + retPlace.place +"</b><br>" +
-								"You spent " + retPlace.number_of_days + " days here<br>" +
+								"You spent " + retPlace.number_of_days + " " + days + " here<br>" +
 								"and averaged $" + retPlace.average + " per day.</div";
 								
 			Expenses.codeAddress(retPlace, infoBox);
