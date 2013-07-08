@@ -31,7 +31,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 	}.property('@each.place'),
 	
 	placeStats: function () {
-		
+		// Clear the map, we'll put new circles on with the new weights
 		Expenses.markersDisplayed.forEach( function(marker) {
 			marker.setMap(null);
 		});
@@ -44,7 +44,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 			
 			number_of_days = expenses_from_place.mapProperty('dateString').uniq().get('length');
 			total_spent = expenses_from_place.reduce(function (prevVal, item) {
-				return prevVal + item.get('amount');
+				return prevVal + Number(item.get('amount')) * Number(item.get('fxrate'));
 			}, 0.0);
 			retPlace = { 	"place": p,
 								"number_of_days": number_of_days,
@@ -72,7 +72,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 			});
 
 			total_spent = expenses_for_category.reduce(function (prevVal, item) {
-				return prevVal + item.get('amount');
+				return prevVal + Number(item.get('amount')) * Number(item.get('fxrate'));
 			}, 0.0);
 			return { 	"name": c,
 								"total_number_of_days": total_number_of_days,
