@@ -49,7 +49,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 			retPlace = { 	"place": p,
 								"number_of_days": number_of_days,
 								"total_spent": total_spent,
-								"average": total_spent/number_of_days };
+								"average": (total_spent/number_of_days).toFixed(2) };
 
 			infoBox = "<div><b>" + retPlace.place +"</b><br>" +
 								"You spent " + retPlace.number_of_days + " days here<br>" +

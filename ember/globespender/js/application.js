@@ -5,7 +5,7 @@ window.Expenses = Ember.Application.create({
 Expenses.initMap = function () {
   var myOptions = {
     center: new google.maps.LatLng(40.7143528, -74.0059731), // New York
-    zoom: 4,
+    zoom: 3,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   Expenses.map = new google.maps.Map($("#map_canvas")[0],

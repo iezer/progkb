@@ -12,17 +12,23 @@ body {
 	font-smoothing: antialiased;
 }
 
+#header {
+	position : absolute;
+	top: 10px;
+	left: 20px;
+	height: 50px;
+}
 #map_canvas {
 	position: absolute;
-	top: 20px;
+	top: 60px;
 	left: 20px;
 	width:700px;
-	height:500px;
+	height:400px;
 }
 
 #stats {
 	position:absolute;
-	top: 0px;
+	top: 55px;
 	left: 750px;
 	height: 500px;
 	width: 500px;
@@ -30,7 +36,7 @@ body {
 
 #expenses_table {
 	position:absolute;
-	top: 550px;
+	top: 490px;
 	left: 20px;
 //	height: 400px;
 	width: 700px;

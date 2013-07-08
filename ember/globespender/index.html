@@ -11,12 +11,12 @@
 </head>
 <body>
 	<script type="text/x-handlebars" data-template-name="expenses">
-			<div id="expenses_table">
-			
-				<header id="header">
-					<h1>Globe Spender</h1>
-					<button {{action 'createExpense'}}>Create</button
-				</header>
+			<header id="header">
+				<h1>Globe Spender</h1>
+			</header>
+	
+			<div id="expenses_table">		
+				<h2>Expenses  <button {{action 'createExpense'}}>Create</button></h2>
 				
 				<table>
 					<tr>
