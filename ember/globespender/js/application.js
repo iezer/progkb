@@ -62,3 +62,12 @@ Expenses.codeAddress = function (place, infoBox) {
   });
 }
 
+Expenses.MyTextField = Em.TextField.extend({
+  attributeBindings: ['size'],
+  size: 7
+});
+
+Expenses.DateTextField = Em.TextField.extend({
+  attributeBindings: ['size'],
+  size: 15
+});

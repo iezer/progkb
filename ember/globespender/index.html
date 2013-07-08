@@ -33,14 +33,14 @@
 					{{#each controller itemController="expense"}}
 					<tr>
 							{{#if is_editing }}
-								<td>{{view Ember.TextField valueBinding='date'}}</td>
-								<td>{{view Ember.TextField valueBinding='currency'}}</td>
-								<td>{{view Ember.TextField valueBinding='amount'}}</td>
-								<td>{{view Ember.TextField valueBinding='category'}}</td>
-								<td>{{view Ember.TextField valueBinding='place'}}</td>
-								<td>{{view Ember.TextField valueBinding='destination'}}</td>
-								<td>{{view Ember.TextField valueBinding='note'}}</td>
-								<td>{{view Ember.TextField valueBinding='fxrate'}}</td>
+								<td>{{view Expenses.DateTextField valueBinding='date'}}</td>
+								<td>{{view Expenses.MyTextField valueBinding='currency'}}</td>
+								<td>{{view Expenses.MyTextField valueBinding='amount'}}</td>
+								<td>{{view Expenses.MyTextField valueBinding='category'}}</td>
+								<td>{{view Expenses.MyTextField valueBinding='place'}}</td>
+								<td>{{view Expenses.MyTextField valueBinding='destination'}}</td>
+								<td>{{view Expenses.MyTextField valueBinding='note'}}</td>
+								<td>{{view Expenses.MyTextField valueBinding='fxrate'}}</td>
 								<td>
 									<button {{action 'doneEditing'}}>Done</button>
 									<button {{action 'removeExpense'}}>Destroy</button>
