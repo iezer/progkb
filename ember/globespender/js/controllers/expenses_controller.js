@@ -1,4 +1,6 @@
 Expenses.ExpensesController = Ember.ArrayController.extend({
+	sortProperties: ['spent_at'],
+	sortAscending: false,
 	
   createExpense: function () {
 
