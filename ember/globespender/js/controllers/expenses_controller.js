@@ -31,8 +31,12 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 	}.property('@each.place'),
 	
 	placeStats: function () {
-		places = this.mapProperty('place').uniq();
 		
+		Expenses.markersDisplayed.forEach( function(marker) {
+			marker.setMap(null);
+		});
+		
+		places = this.mapProperty('place').uniq();
 		var retval = places.map(function (p) {
 			expenses_from_place = this.filter(function(item) {
 				if (item.get('place') == p) { return true; }
@@ -45,7 +49,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 			retPlace = { 	"place": p,
 								"number_of_days": number_of_days,
 								"total_spent": total_spent,
-								"average": (total_spent/number_of_days).toFixed(2) };
+								"average": total_spent/number_of_days };
 
 			infoBox = "<div><b>" + retPlace.place +"</b><br>" +
 								"You spent " + retPlace.number_of_days + " days here<br>" +

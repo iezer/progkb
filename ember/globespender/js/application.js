@@ -1,4 +1,6 @@
-window.Expenses = Ember.Application.create();
+window.Expenses = Ember.Application.create({
+	markersDisplayed: []
+});
 
 Expenses.initMap = function () {
   var myOptions = {
@@ -24,19 +26,11 @@ Expenses.codeAddress = function (place, infoBox) {
   geocoder.geocode( {'address': place.place}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
 
-			//var contentString = '<b>Info</b>';
       var infoWindow = new google.maps.InfoWindow({
 			    content: infoBox
 			});
 
-      Expenses.map.setCenter(results[0].geometry.location);			
-		/*	var marker = new google.maps.Marker({
-          map: Expenses.map,
-          position: results[0].geometry.location,
-					title: place.place
-      }); */
-			
-			console.log (place.average + " " + place.average * 100);
+      Expenses.map.setCenter(results[0].geometry.location);
 			var circleOptions = {
 	      strokeColor: '#FF0000',
 	      strokeOpacity: 0.8,
@@ -48,7 +42,9 @@ Expenses.codeAddress = function (place, infoBox) {
 	      center: results[0].geometry.location,
 	      radius: 20000 * place.average
 	    };
+			console.log (place.place + ": " + place.average);
 	    var cityCircle = new google.maps.Circle(circleOptions);
+			Expenses.markersDisplayed.push(cityCircle);
 			
 			google.maps.event.addListener(cityCircle, 'click', function () {
 				infoWindow.setPosition(results[0].geometry.location);
