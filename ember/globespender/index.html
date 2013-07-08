@@ -33,14 +33,14 @@
 					{{#each controller itemController="expense"}}
 					<tr>
 							{{#if is_editing }}
-								<td>{{view Expenses.DateTextField valueBinding='date'}}</td>
+								<td>{{view Expenses.DateField dateBinding='spent_at'}}</td>
 								<td>{{view Expenses.MyTextField valueBinding='currency'}}</td>
-								<td>{{view Expenses.MyTextField valueBinding='amount'}}</td>
+								<td>{{view Expenses.MyTextField valueBinding='amount' type='number'}}</td>
 								<td>{{view Expenses.MyTextField valueBinding='category'}}</td>
 								<td>{{view Expenses.MyTextField valueBinding='place'}}</td>
 								<td>{{view Expenses.MyTextField valueBinding='destination'}}</td>
 								<td>{{view Expenses.MyTextField valueBinding='note'}}</td>
-								<td>{{view Expenses.MyTextField valueBinding='fxrate'}}</td>
+								<td>{{view Expenses.MyTextField valueBinding='fxrate' type='number'}}</td>
 								<td>
 									<button {{action 'doneEditing'}}>Done</button>
 									<button {{action 'removeExpense'}}>Delete</button>
@@ -61,7 +61,8 @@
 					</tr>
 					{{/each}}
 				</table>
-			
+				<button {{action 'deleteAll'}}>Delete All</button>
+				<button {{action 'import'}}>Import</button>
 			</div>
 
 			<div id="stats">

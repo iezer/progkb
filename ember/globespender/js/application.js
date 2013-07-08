@@ -54,9 +54,9 @@ Expenses.codeAddress = function (place, infoBox) {
 	      map: Expenses.map,
 				clickable:true,
 	      center: results[0].geometry.location,
-	      radius: 20000 * place.average
+	      radius: 2000 * place.average
 	    };
-			console.log (place.place + ": " + place.average);
+			//console.log (place.place + ": " + place.average);
 	    var cityCircle = new google.maps.Circle(circleOptions);
 			Expenses.markersDisplayed.push(cityCircle);
 			
@@ -69,7 +69,7 @@ Expenses.codeAddress = function (place, infoBox) {
 				infoWindow.close();
 			});
 			
-			console.log (place.place + ": " + results[0].geometry.location.lat() + ", " + results[0].geometry.location.lng());
+			//console.log (place.place + ": " + results[0].geometry.location.lat() + ", " + results[0].geometry.location.lng());
     } else {
       alert('Geocode was not successful on "' + place.place +'" for the following reason: ' + status);
     }
@@ -84,4 +84,21 @@ Expenses.MyTextField = Em.TextField.extend({
 Expenses.DateTextField = Em.TextField.extend({
   attributeBindings: ['size'],
   size: 15
+});
+
+Expenses.DateField = Ember.TextField.extend({
+  type: 'date',
+  date: function(key, date) {
+    if (date) {
+      this.set('value', date.toISOString().substring(0, 10));
+    } else {
+      value = this.get('value');
+      if (value) {
+        date = new Date(value);
+      } else {
+        date = null;
+      }
+    }
+    return date;
+  }.property('value')
 });
