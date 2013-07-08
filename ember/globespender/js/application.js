@@ -44,7 +44,6 @@ Expenses.codeAddress = function (place, infoBox) {
 			    content: infoBox
 			});
 
-      Expenses.map.setCenter(results[0].geometry.location);
 			var circleOptions = {
 	      strokeColor: '#FF0000',
 	      strokeOpacity: 0.8,
@@ -54,7 +53,7 @@ Expenses.codeAddress = function (place, infoBox) {
 	      map: Expenses.map,
 				clickable:true,
 	      center: results[0].geometry.location,
-	      radius: 2000 * place.average
+	      radius: 1000 * place.average
 	    };
 			//console.log (place.place + ": " + place.average);
 	    var cityCircle = new google.maps.Circle(circleOptions);

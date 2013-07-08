@@ -115,9 +115,9 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 		{category: 'Transit', amount: 18.2, currency: 'CAD', spent_at: new Date('2012-12-06'), note: 'Tokens', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Coffee', amount: 4.2, currency: 'CAD', spent_at: new Date('2012-12-06'), note: 'Moonbean', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Lunch', amount: 9, currency: 'CAD', spent_at: new Date('2012-12-06'), note: 'Big fat burrito', place: 'Toronto', destination: '', fxrate: 1.00},
-		{category: 'Toiletries', amount: 7.89, currency: 'CAD', spent_at: new Date('2012-12-06'), note: 'Shampoo and q-tips', place: 'Toronto', destination: '', fxrate: 1.00},
+		{category: 'Toiletries', amount: 7.89, currency: 'CAD', spent_at: new Date('2012-12-06'), note: 'Shampoo', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Toiletries', amount: 2.25, currency: 'CAD', spent_at: new Date('2012-12-06'), note: 'Chapstick', place: 'Toronto', destination: '', fxrate: 1.00},
-		{category: 'Cell Phone', amount: 775, currency: 'CAD', spent_at: new Date('2012-12-06'), note: 'Tokyo phone Softbank', place: 'Toronto', destination: '', fxrate: 1.00},
+		{category: 'Cell Phone', amount: 75, currency: 'CAD', spent_at: new Date('2012-12-06'), note: 'Tokyo phone Softbank', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Dinner', amount: 12, currency: 'CAD', spent_at: new Date('2012-12-07'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Coffee', amount: 5.08, currency: 'CAD', spent_at: new Date('2012-12-07'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Drinks', amount: 5, currency: 'CAD', spent_at: new Date('2012-12-07'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
@@ -132,7 +132,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 		{category: 'Sports', amount: 128, currency: 'CAD', spent_at: new Date('2012-12-08'), note: 'Skiing in jasper', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Clothes', amount: 167.03, currency: 'CAD', spent_at: new Date('2012-12-08'), note: 'Tuxedo rental Martin wedding', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Drinks', amount: 7.35, currency: 'CAD', spent_at: new Date('2012-12-08'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
-		{category: 'Clothes', amount: 297.42, currency: 'CAD', spent_at: new Date('2012-12-08'), note: 'Winter jacket cm', place: 'Toronto', destination: '', fxrate: 1.00},
+		{category: 'Clothes', amount: 197.42, currency: 'CAD', spent_at: new Date('2012-12-08'), note: 'Winter jacket cm', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Dinner', amount: 80, currency: 'CAD', spent_at: new Date('2012-12-08'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Taxi', amount: 21, currency: 'CAD', spent_at: new Date('2012-12-09'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Taxi', amount: 16, currency: 'CAD', spent_at: new Date('2012-12-09'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
@@ -183,7 +183,7 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 		{category: 'Clothes', amount: 42, currency: 'CAD', spent_at: new Date('2012-12-19'), note: 'undershirts at Winners', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Clothes', amount: 50.17, currency: 'CAD', spent_at: new Date('2012-12-19'), note: 'Sweater banana republic', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Clothes', amount: 50.85, currency: 'CAD', spent_at: new Date('2012-12-19'), note: 'Bow tie', place: 'Toronto', destination: '', fxrate: 1.00},
-		{category: 'Haircut', amount: 98.14, currency: 'CAD', spent_at: new Date('2012-12-19'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
+		{category: 'Haircut', amount: 38.14, currency: 'CAD', spent_at: new Date('2012-12-19'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Cell phone', amount: 29.25, currency: 'CAD', spent_at: new Date('2012-12-20'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Cell phone', amount: 28.25, currency: 'CAD', spent_at: new Date('2012-12-20'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Transit', amount: 10.5, currency: 'CAD', spent_at: new Date('2012-12-20'), note: 'Ttc day pass', place: 'Toronto', destination: '', fxrate: 1.00},
@@ -207,7 +207,6 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 		{category: 'Lunch', amount: 12.1, currency: 'CAD', spent_at: new Date('2012-12-22'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Snack', amount: 2, currency: 'CAD', spent_at: new Date('2012-12-23'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Coffee', amount: 2, currency: 'CAD', spent_at: new Date('2012-12-23'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
-		{category: 'Charity', amount: 2.5, currency: 'CAD', spent_at: new Date('2012-12-23'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Lunch', amount: 5, currency: 'CAD', spent_at: new Date('2012-12-23'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Software', amount: 1, currency: 'CAD', spent_at: new Date('2012-12-23'), note: '', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'General', amount: 6.07, currency: 'CAD', spent_at: new Date('2012-12-25'), note: 'Superglue', place: 'Montreal', destination: '', fxrate: 1.00},
@@ -253,9 +252,9 @@ Expenses.ExpensesController = Ember.ArrayController.extend({
 		{category: 'Travel', amount: 81.06, currency: 'CAD', spent_at: new Date('2013-01-06'), note: 'Flight Boston to Toronto on porter', place: 'Boston', destination: 'Toronto', fxrate: 1.00},
 		{category: 'Cell Phone', amount: 146.24, currency: 'CAD', spent_at: new Date('2013-01-06'), note: 'Tokyo phone Softbank', place: 'Toronto', destination: '', fxrate: 1.00},
 		{category: 'Lunch', amount: 10, currency: 'CAD', spent_at: new Date('2013-01-06'), note: 'with Shawn and Sachiko before flight', place: 'Toronto', destination: '', fxrate: 1.00},
-		{category: 'Bowtie sales', amount: -180, currency: 'CAD', spent_at: new Date('2013-01-07'), note: 'In montreal, 2 for Suzanne, 1 for Alex, and one for MCs BF', place: 'Toronto', destination: '', fxrate: 1.00},
-		{category: 'Sewing', amount: 9, currency: 'CAD', spent_at: new Date('2013-01-07'), note: 'Notions for bowties, plastic buttons and clasps for adjustable', place: 'Toronto', destination: '', fxrate: 1.00},
-		{category: 'Sewing', amount: 22.58, currency: 'CAD', spent_at: new Date('2013-01-07'), note: 'Fabric for baby bowtie', place: 'Toronto', destination: '', fxrate: 1.00}
+		{category: 'Bowtie sales', amount: -180, currency: 'CAD', spent_at: new Date('2012-12-07'), note: 'In montreal, 2 for Suzanne, 1 for Alex, and one for MCs BF', place: 'Toronto', destination: '', fxrate: 1.00},
+		{category: 'Sewing', amount: 9, currency: 'CAD', spent_at: new Date('2012-12-07'), note: 'Notions for bowties, plastic buttons and clasps for adjustable', place: 'Toronto', destination: '', fxrate: 1.00},
+		{category: 'Sewing', amount: 22.58, currency: 'CAD', spent_at: new Date('2012-12-07'), note: 'Fabric for baby bowtie', place: 'Toronto', destination: '', fxrate: 1.00}
 		];
 		
 		if( !Expenses.getPropertyLock() ) {
