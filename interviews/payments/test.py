@@ -1,10 +1,10 @@
-import venmo
+import payments
 import unittest
 
-class TestVenmo(unittest.TestCase):
+class TestPayments(unittest.TestCase):
 
 	def setUp(self):
-		self.console = venmo.VenmoConsole()
+		self.console = payments.PaymentsConsole()
 		self.console.preloop()
 		from StringIO import StringIO
 		self.out = StringIO()

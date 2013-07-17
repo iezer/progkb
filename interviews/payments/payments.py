@@ -26,12 +26,12 @@ def cardLuhnChecksumIsValid(card_number):
 
 	return ( (sum % 10) == 0 )
 	
-class VenmoConsole(cmd.Cmd):
+class PaymentsConsole(cmd.Cmd):
 
   def __init__(self):
     cmd.Cmd.__init__(self)
     self.prompt = "=>> "
-    self.intro  = "Welcome to Venmo!"  ## defaults to None
+    self.intro  = "Welcome to Payments!"  ## defaults to None
 
   def do_user(self, arg, out=sys.stdout):
 	if arg in self._users:
@@ -135,7 +135,7 @@ class VenmoConsole(cmd.Cmd):
 	out.write(price(balance))
 	
   def do_exit(self, args, out=sys.stdout):
-	out.write("Thank you for using Venmo.\n")
+	out.write("Thank you for using Payments.\n")
 	exit()
 	
   ## Override methods in Cmd object ##
@@ -160,5 +160,5 @@ class VenmoConsole(cmd.Cmd):
     pass
 
 if __name__ == '__main__':
-  console = VenmoConsole()
+  console = PaymentsConsole()
   console . cmdloop()

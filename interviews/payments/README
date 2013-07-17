@@ -1,16 +1,16 @@
-The implementation of this Venmo program is in the file venmo.py
+The implementation of this Payments program is in the file payments.py
 
 There are unittests in test.py, these can be run with the following command
 > python test.py
 
 There are also test commands to be fed into the program in the file called test
 you can see the results by running
-> python venmo.py < test.txt
+> python payments.py < test.txt
 
 I ran a code coverage tool called coverage.py http://nedbatchelder.com/code/coverage/
-and have 94% coverage, you can see the results in the file htmlcov/venmo.html
+and have 94% coverage, you can see the results in the file htmlcov/payments.html
 
 I wrote this in Python because the Python Cmd library makes it very easy to write
 these types of command line applications. It also has an easy to use unit test library,
 and by replacing STDOUT with a String Buffer it's easy to verify the program's output
-in the unit tests. Also it's what Venmo uses ;)
+in the unit tests.
