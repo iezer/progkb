@@ -1,0 +1,29 @@
+This program does the following
+
+1.     Retrieves this image from the network -http://174.129.202.172:8880/exercise.png 
+2.     Interrogates each pixel.  
+3.     Print to stdout, where pixel is white, print “X” otherwise print a space “ “.
+4.     Optional - find the longest unbroken vertical sequence of white pixels, 1 pixel wide and identify by printing a “V” instead of an “X”.
+
+TO COMPILE, run
+
+> make
+
+Then run with no args for to use the URL above by default
+
+> ocr
+
+You can optionally specify a different URL at the command line
+
+> ocr http://www.isaacezer.com
+
+This program is well tested and will throw appropriate error messages in the event that
+1. The file is not a proper PNG file
+2. There is no internet connection
+3. The program runs out of memory (unlikely!)
+
+This program requires that the CURL library is installed. It can be downloaded from
+http://curl.haxx.se/
+
+Output can be seen in out.txt
+
