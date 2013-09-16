@@ -1,0 +1,11 @@
+[user]
+	name = Isaac Ezer
+	email = isaac.ezer@gmail.com
+[core]
+	editor = emacs
+[color]
+	ui = auto
+[push]
+	default = tracking
+[branch]
+	autosetuprebase = always
