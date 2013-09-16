@@ -37,3 +37,12 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.handlebars\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(add-to-list 'auto-mode-alist '("\\.sass\\'" . scss-mode))
+(add-to-list 'auto-mode-alist '("\\.css.scss\\'" . scss-mode))
+
+
+(autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
+(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
