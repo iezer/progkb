@@ -1,4 +1,5 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq-default tab-width 2)
 
 ;;mode-compile
     (autoload 'mode-compile "mode-compile"
@@ -12,6 +13,15 @@
 
 ;;(require 'rvm)
 ;;(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
+
+(setq coffee-tab-width 2)
+
+(require 'project-grep)
+(global-set-key (kbd "M-s") 'project-grep)
+
+;;(add-to-list 'load-path "~/.emacs.d/find-file-in-project")
+(autoload 'find-file-in-project "find-file-in-project" "Find file in project." t)
+(global-set-key (kbd "M-n") 'find-file-in-project)
 
 (add-to-list 'load-path "rspec-mode")
 (require 'rspec-mode)
@@ -28,12 +38,8 @@
  ;; If there is more than one, they won't work right.
  )
 
-(add-to-list 'load-path "~/.emacs.d/find-file-in-project")
-(autoload 'find-file-in-project "find-file-in-project" "Find file in project." t)
-(global-set-key (kbd "M-n") 'find-file-in-project)
-
-
 (require 'web-mode)
+(setq web-mode-code-indent-offset 2)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.handlebars\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
@@ -42,7 +48,6 @@
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (add-to-list 'auto-mode-alist '("\\.sass\\'" . scss-mode))
 (add-to-list 'auto-mode-alist '("\\.css.scss\\'" . scss-mode))
-
 
 (autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
