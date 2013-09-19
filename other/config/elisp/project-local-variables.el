@@ -39,7 +39,7 @@
 
 ;; It has not been tested in versions of Emacs prior to 22.
 
-(defvar plv-project-file ".emacs-project"
+(defvar plv-project-file ".git"
   "Name prefix for project files.
  Emacs appends name of major mode and looks for such a file in
  the current directory and its parents.")
@@ -66,7 +66,7 @@
 ;;       (when gfile (load gfile))
 ;;       (when pfile (load pfile)))))
 
-(add-to-list 'auto-mode-alist '("^\.emacs-project" . emacs-lisp-mode))
+(add-to-list 'auto-mode-alist '("^\.git" . emacs-lisp-mode))
 
 (provide 'project-local-variables)
 

@@ -1,5 +1,12 @@
 Emacs keyboard shortcuts
 
+NEW STUFF
+
+Find file - M-n
+Find in Project - M-s
+Indent block - tab
+
+
 Got to test file   C-c, t
 Run test file      C-c, v
 Find in Project    M-n

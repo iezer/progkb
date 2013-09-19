@@ -14,3 +14,4 @@ export PS1='\W$(__git_ps1 " (%s)") \$ '
 #set -o xtrace
 
 alias rt='bundle exec rake tmp:cache:clear;touch tmp/restart.txt'
+alias sk='source .powenv;bundle exec sidekiq -c 2 -q default -q snapshot'
