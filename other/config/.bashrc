@@ -15,3 +15,6 @@ export PS1='\W$(__git_ps1 " (%s)") \$ '
 
 alias rt='bundle exec rake tmp:cache:clear;touch tmp/restart.txt'
 alias sk='source .powenv;bundle exec sidekiq -c 2 -q default -q snapshot'
+alias pgr='pg_restore --verbose --clean --no-acl --no-owner -h localhost -U isaac -d tobe_development latest.dump'
+alias pgconfig='emacs /usr/local/var/postgres/postgresql.conf'
+alias rc='source .powenv; bundle exec rails console'

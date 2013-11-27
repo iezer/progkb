@@ -17,9 +17,6 @@
 ;;(require 'rvm)
 ;;(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
 
-(require 'project-grep)
-(global-set-key (kbd "M-s") 'project-grep)
-
 ;;(add-to-list 'load-path "~/.emacs.d/find-file-in-project")
 (autoload 'find-file-in-project "find-file-in-project" "Find file in project." t)
 (global-set-key (kbd "M-n") 'find-file-in-project)
@@ -69,3 +66,9 @@
     (self-insert-command N)))
 
 (global-set-key (kbd "<backtab>") 'my-unindent-region)
+
+(global-linum-mode)
+
+(add-to-list 'load-path "ag.el")
+(require 'ag)
+(global-set-key (kbd "M-s") 'ag-project)
