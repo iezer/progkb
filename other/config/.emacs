@@ -3,6 +3,7 @@
 (setq indent-tabs-mode nil) ; always replace tabs with spaces
 
 (global-set-key (kbd "M-TAB") 'dabbrev-expand)
+(global-set-key (kbd "M-T") 'auto-revert-tail-mode)
 
 ;;mode-compile
     (autoload 'mode-compile "mode-compile"
