@@ -69,9 +69,12 @@
 (global-set-key (kbd "<backtab>") 'my-unindent-region)
 
 (global-linum-mode)
+(column-number-mode)
 
 (add-to-list 'load-path "ag.el")
 (require 'ag)
 (global-set-key (kbd "M-s") 'ag-project)
 
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
+
+(setq ruby-deep-indent-paren nil)
