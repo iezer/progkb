@@ -1,11 +1,15 @@
 Emacs keyboard shortcuts
 
+# Put a .emacs file in your project root directory
 NEW STUFF
 
-Find file - M-n
+Toggle Tail Mode - scroll to end and press M-T
+Find file in project - M-n
 Find in Project - M-s
 Indent block - tab
 
+
+RSPEC
 
 Got to test file   C-c, t
 Run test file      C-c, v
