@@ -3,6 +3,8 @@ Emacs keyboard shortcuts
 # Put a .emacs file in your project root directory
 NEW STUFF
 
+Cx-x v =   (vc-diff or git diff)
+
 Toggle Tail Mode - scroll to end and press M-T
 Find file in project - M-n
 Find in Project - M-s

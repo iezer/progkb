@@ -95,10 +95,15 @@
 ;;Add a space after line numbers
 ;;(setq linum-format "%4d ")
 
+(require 'git)
+(require 'git-blame)
+
+(define-derived-mode rails-log-mode ruby-mode "Rails log"
+  "Major mode for viewing Rails log files.")
+(add-to-list 'auto-mode-alist '("\\.log\\'" . rails-log-mode))
+(add-hook 'rails-log-mode-hook 'auto-revert-tail-mode)
+(add-hook 'rails-log-mode-hook 'end-of-buffer)
+
 ;; line numbers for specific modes
 (global-linum-mode)
-(setq linum-disabled-modes-list '(eshell-mode term-mode log-view-mode wl-summary-mode compilation-mode)) (defun linum-on () (unless (or (minibufferp) (member major-mode linum-disabled-modes-list)) (linum-mode 1)))
-
-(add-to-list 'auto-mode-alist '("\\.log\\'" . log-view-mode))
-(add-hook 'log-view-mode-hook 'auto-revert-tail-mode)
-(add-hook 'log-view-mode-hook 'end-of-buffer)
+(setq linum-disabled-modes-list '(eshell-mode term-mode rails-log-mode log-view-mode wl-summary-mode compilation-mode)) (defun linum-on () (unless (or (minibufferp) (member major-mode linum-disabled-modes-list)) (linum-mode 1)))
