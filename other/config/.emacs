@@ -45,10 +45,9 @@
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-markup-indent-offset 2)
 
-(autoload 'scss-mode "scss-mode")
+(require 'scss-mode)
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (add-to-list 'auto-mode-alist '("\\.sass\\'" . scss-mode))
-(add-to-list 'auto-mode-alist '("\\.css.scss\\'" . scss-mode))
 
 (autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
@@ -68,7 +67,7 @@
 
 (global-set-key (kbd "<backtab>") 'my-unindent-region)
 
-(global-linum-mode)
+
 (column-number-mode)
 
 (add-to-list 'load-path "ag.el")
@@ -78,3 +77,28 @@
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 
 (setq ruby-deep-indent-paren nil)
+
+;; http://royontechnology.blogspot.com/2012/04/minor-annoyance-of-running-rails.html
+(defun rails-console ()
+  "Create a rails console process, if one doesn't exist. And switch to *rails-console* buffer."
+  (interactive)
+  (if (null (get-buffer "*rails-console*"))
+      (progn
+        (linum-mode 0)
+        (term "/bin/bash")
+        (term-send-string (get-buffer-process "*terminal*") "rc\n")
+        (switch-to-buffer "*terminal*")
+        (rename-buffer "*rails-console*")
+        (term-line-mode))
+    (switch-to-buffer "*rails-console*")))
+
+;;Add a space after line numbers
+;;(setq linum-format "%4d ")
+
+;; line numbers for specific modes
+(global-linum-mode)
+(setq linum-disabled-modes-list '(eshell-mode term-mode log-view-mode wl-summary-mode compilation-mode)) (defun linum-on () (unless (or (minibufferp) (member major-mode linum-disabled-modes-list)) (linum-mode 1)))
+
+(add-to-list 'auto-mode-alist '("\\.log\\'" . log-view-mode))
+(add-hook 'log-view-mode-hook 'auto-revert-tail-mode)
+(add-hook 'log-view-mode-hook 'end-of-buffer)
