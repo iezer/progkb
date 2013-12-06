@@ -1,0 +1,3 @@
+
+find . -name *.css | xargs rm
+find . -name *presenter.rb -print0 | xargs -0 grep -L use_rails_cache

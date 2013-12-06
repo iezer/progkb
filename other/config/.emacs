@@ -98,6 +98,8 @@
 (require 'git)
 (require 'git-blame)
 
+(require 'twittering-mode)
+
 (define-derived-mode rails-log-mode ruby-mode "Rails log"
   "Major mode for viewing Rails log files.")
 (add-to-list 'auto-mode-alist '("\\.log\\'" . rails-log-mode))
