@@ -67,14 +67,15 @@
 
 (global-set-key (kbd "<backtab>") 'my-unindent-region)
 
-
 (column-number-mode)
 
 (add-to-list 'load-path "ag.el")
 (require 'ag)
 (global-set-key (kbd "M-s") 'ag-project)
+(defalias 'agk 'ag-kill-buffers)
 
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\Gemfile\\'" . ruby-mode))
 
 (setq ruby-deep-indent-paren nil)
 
@@ -93,10 +94,9 @@
     (switch-to-buffer "*rails-console*")))
 
 ;;Add a space after line numbers
-;;(setq linum-format "%4d ")
+ ; space before and after makes git-gutter behave
+(setq linum-format "%4d ")
 
-(require 'git)
-(require 'git-blame)
 
 (require 'twittering-mode)
 
@@ -105,7 +105,26 @@
 (add-to-list 'auto-mode-alist '("\\.log\\'" . rails-log-mode))
 (add-hook 'rails-log-mode-hook 'auto-revert-tail-mode)
 (add-hook 'rails-log-mode-hook 'end-of-buffer)
+;;(add-hook 'rails-log-mode-hook (ansi-color-apply-on-region (point-min) (point-max)))
 
 ;; line numbers for specific modes
 (global-linum-mode)
 (setq linum-disabled-modes-list '(eshell-mode term-mode rails-log-mode log-view-mode wl-summary-mode compilation-mode)) (defun linum-on () (unless (or (minibufferp) (member major-mode linum-disabled-modes-list)) (linum-mode 1)))
+
+(menu-bar-mode -1)
+
+(require 'dash-at-point)
+;;(add-hook 'after-open-hook (lambda () (setq dash-at-point-docset "to.be")))
+
+
+(add-hook 'coffee-mode-hook
+          (lambda () (local-set-key (kbd "C-c,v") 'coffee-compile-buffer)))
+
+(show-paren-mode 1)
+(setq show-paren-delay 0)
+
+(require 'git)
+(require 'git-blame)
+(require 'git-commit-mode)
+(require 'git-gutter)
+(global-git-gutter-mode t)

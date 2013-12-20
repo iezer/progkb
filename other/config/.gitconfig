@@ -9,3 +9,7 @@
 	default = tracking
 [branch]
 	autosetuprebase = always
+
+[alias]
+	bl = !git log --no-walk --date-order --oneline --decorate $(git rev-list --branches --no-walk)
+	co = !git checkout

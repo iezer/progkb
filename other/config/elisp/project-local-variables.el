@@ -47,13 +47,28 @@
 (defmacro setl (sym val)
   "Like setq, but makes sym a local variable first."
   `(set (make-local-variable ',sym) ,val))
+ (setq dir default-directory)
+ (setq mode-name "")
 
 (defun plv-find-project-file (dir mode-name)
+
  (let ((f (expand-file-name (concat plv-project-file mode-name) dir))
        (parent (file-truename (expand-file-name ".." dir))))
    (cond ((string= dir parent) nil)
          ((file-exists-p f) f)
          (t (plv-find-project-file parent mode-name)))))
+
+(defun find-project-file ()
+  "find project file"
+  (interactive)
+  (plv-find-project-file default-directory "")
+  )
+
+(find-project-file)
+
+message
+
+
 
 ;; (defadvice hack-local-variables (before project-local-variables activate)
 ;;   (let* ((full-name (symbol-name major-mode))

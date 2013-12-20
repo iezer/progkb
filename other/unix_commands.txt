@@ -1,3 +1,6 @@
 grep -nHR -e isPullable --include=*.{coffee,handlebars} ~/Code/ToBe
 find . -name *.css | xargs rm
 find . -name *presenter.rb -print0 | xargs -0 grep -L use_rails_cache
+redis-cli
+rails dbconsole
+git checkout --track -b master origin/master
