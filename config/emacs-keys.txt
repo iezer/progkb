@@ -1,7 +1,6 @@
 Emacs keyboard shortcuts
 
 # Put a .emacs file in your project root directory
-NEW STUFF
 
 Ruby Next Block     C-M-n
 Ruby Previous Block C-M-p
@@ -12,7 +11,7 @@ Toggle Tail Mode - scroll to end and press M-T
 Find file in project - M-n
 Find in Project - M-s
 Indent block - tab
-
+Comment block - M-;
 
 RSPEC
 
