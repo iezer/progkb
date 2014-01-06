@@ -1,0 +1,16 @@
+[user]
+	name = Isaac Ezer
+	email = isaac.ezer@gmail.com
+[core]
+	editor = emacs
+[color]
+	ui = auto
+[push]
+	default = tracking
+[branch]
+	autosetuprebase = always
+
+[alias]
+	bl = !git log --no-walk --date-order --oneline --decorate $(git rev-list --branches --no-walk)
+	co = !git checkout
+	ap = !git add . -p
