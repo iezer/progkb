@@ -172,3 +172,7 @@
 ;; (dolist (p my-packages)
 ;;   (when (not (package-installed-p p))
 ;;     (package-install p)))
+
+(require 'window-number)
+(window-number-mode t)
+(window-number-meta-mode t)

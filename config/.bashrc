@@ -2,7 +2,7 @@
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/user/local/bin:/usr/local/heroku/bin:$PATH"
 source ~/Code/.git-completion.sh
 source ~/Code/.git-prompt.sh
 export PS1='\W$(__git_ps1 " (%s)") \$ '
