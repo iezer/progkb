@@ -71,8 +71,6 @@
 
 (add-to-list 'load-path "ag.el")
 (require 'ag)
-(setq ag-reuse-buffers t)
-(setq ag-highlight-search t)
 (global-set-key (kbd "M-s") 'ag-project)
 (defalias 'agk 'ag-kill-buffers)
 
@@ -174,7 +172,3 @@
 ;; (dolist (p my-packages)
 ;;   (when (not (package-installed-p p))
 ;;     (package-install p)))
-
-(require 'window-number)
-(window-number-mode t)
-(window-number-meta-mode t)
