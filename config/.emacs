@@ -1,17 +1,27 @@
+;; Reverse colors for the border to have nicer line
+(set-face-inverse-video-p 'vertical-border nil)
+(set-face-background 'vertical-border (face-background 'default))
+
+(set-face-attribute 'mode-line nil
+   :foreground "gray60" :background "gray20"
+   :inverse-video nil
+   :box '(:line-width 6 :color "gray20" :style nil))
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (setq indent-tabs-mode nil) ; always replace tabs with spaces
 
-(global-set-key (kbd "M-TAB") 'dabbrev-expand)
+(global-set-key (kbd "M-i") 'dabbrev-expand)
+(global-set-key (kbd "M-SPC") 'set-mark-command)
 (global-set-key (kbd "M-T") 'auto-revert-tail-mode)
 
 ;;mode-compile
-    (autoload 'mode-compile "mode-compile"
-      "Command to compile current buffer file based on the major mode" t)
-    (global-set-key "\C-cc" 'mode-compile)
-    (autoload 'mode-compile-kill "mode-compile"
-      "Command to kill a compilation launched by `mode-compile'" t)
-    (global-set-key "\C-ck" 'mode-compile-kill)
+    ;; (autoload 'mode-compile "mode-compile"
+    ;;   "Command to compile current buffer file based on the major mode" t)
+    ;; (global-set-key "\C-cc" 'mode-compile)
+    ;; (autoload 'mode-compile-kill "mode-compile"
+    ;;   "Command to kill a compilation launched by `mode-compile'" t)
+    ;; (global-set-key "\C-ck" 'mode-compile-kill)
 
 (add-to-list 'load-path "~/Code/elisp")
 
@@ -73,7 +83,7 @@
 (require 'ag)
 (setq ag-reuse-buffers t)
 (setq ag-highlight-search t)
-(global-set-key (kbd "M-s") 'ag-project)
+(global-set-key (kbd "M-l") 'ag-project)
 (defalias 'agk 'ag-kill-buffers)
 
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
@@ -100,7 +110,7 @@
 (setq linum-format "%4d ")
 
 
-(require 'twittering-mode)
+;;(require 'twittering-mode)
 
 (define-derived-mode rails-log-mode ruby-mode "Rails log"
   "Major mode for viewing Rails log files.")
@@ -115,7 +125,7 @@
 
 (menu-bar-mode -1)
 
-(require 'dash-at-point)
+;;(require 'dash-at-point)
 ;;(add-hook 'after-open-hook (lambda () (setq dash-at-point-docset "to.be")))
 
 
@@ -141,28 +151,28 @@
 ;;  "git-rebase-mode"
 
 
-(add-to-list 'load-path "~/Code/magit/bin/")
-(eval-after-load 'info
-  '(progn (info-initialize)
-          (add-to-list 'Info-directory-list "/path/to/magit/")))
-(require 'magit)
+;;(add-to-list 'load-path "~/Code/magit/bin/")
+;;(eval-after-load 'info
+;;  '(progn (info-initialize)
+;;          (add-to-list 'Info-directory-list "/path/to/magit/")))
+;;(require 'magit)
 
 
 ;; Interactively Do Things (highly recommended, but not strictly required)
 ;;(require 'ido)
 ;;
-(ido-mode -1)
+;;(ido-mode -1)
 
 ;; Rinari
-(add-to-list 'load-path "~/Code/rinari")
-(require 'rinari)
+;;(add-to-list 'load-path "~/Code/rinari")
+;;(require 'rinari)
 
 ;; for clojure
-(require 'package)
+;;(require 'package)
 
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
-(package-initialize)
+;;(add-to-list 'package-archives
+;;             '("marmalade" . "http://marmalade-repo.org/packages/"))
+;;(package-initialize)
 ;; (defvar my-packages '(starter-kit
 ;;                       starter-kit-lisp
 ;;                       starter-kit-bindings
@@ -177,4 +187,4 @@
 
 (require 'window-number)
 (window-number-mode t)
-(window-number-meta-mode t)
+;;(window-number-meta-mode t)

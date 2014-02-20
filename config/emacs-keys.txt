@@ -2,6 +2,7 @@ Emacs keyboard shortcuts
 
 # Put a .emacs file in your project root directory
 
+M-SPC -   start mark
 C-x DEL - kill to beginning of line
 C-k     - kill to end of line
 
@@ -17,7 +18,7 @@ Cx-x v =   (vc-diff or git diff)
 
 Toggle Tail Mode - scroll to end and press M-T
 Find file in project - M-n
-Find in Project - M-s
+Find in Project - M-l
 Indent block - tab
 Comment block - M-;
 
