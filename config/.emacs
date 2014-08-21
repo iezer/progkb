@@ -86,6 +86,12 @@
 (global-set-key (kbd "M-l") 'ag-project)
 (defalias 'agk 'ag-kill-buffers)
 
+(add-to-list 'load-path "wgrep.el")
+(require 'wgrep)
+
+;(add-to-list 'load-path "wgrep-ag.el")
+;(require 'wgrep-ag)
+
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\Gemfile\\'" . ruby-mode))
 
@@ -164,8 +170,8 @@
 ;;(ido-mode -1)
 
 ;; Rinari
-;;(add-to-list 'load-path "~/Code/rinari")
-;;(require 'rinari)
+(add-to-list 'load-path "~/Code/rinari")
+(require 'rinari)
 
 ;; for clojure
 ;;(require 'package)
@@ -187,4 +193,7 @@
 
 (require 'window-number)
 (window-number-mode t)
-;;(window-number-meta-mode t)
+(window-number-meta-mode t)
+
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
