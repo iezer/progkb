@@ -1470,7 +1470,7 @@ Must be used in conjunction with web-mode-enable-block-face."
         imenu-case-fold-search t
         imenu-create-index-function 'web-mode-imenu-index
         indent-line-function 'web-mode-indent-line
-;;        indent-tabs-mode nil
+        indent-tabs-mode nil
 ;;        require-final-newline nil
         )
 

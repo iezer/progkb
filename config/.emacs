@@ -52,7 +52,9 @@
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.handlebars\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-markup-indent-offset 2)
@@ -68,6 +70,8 @@
 (make-local-variable 'tab-width)
 (set 'tab-width 2)
 (setq coffee-tab-width 2)
+
+(setq js-indent-level 2)
 
 ;; http://stackoverflow.com/questions/11623189/how-to-bind-keys-to-indent-unindent-region-in-emacs
 (defun my-unindent-region (N)
