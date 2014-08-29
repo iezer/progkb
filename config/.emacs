@@ -59,6 +59,7 @@
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
+(setq js2-basic-offset 2)
 
 (add-to-list 'load-path "scss-mode")
 (require 'scss-mode)
@@ -206,3 +207,9 @@
 
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+(setq ruby-deep-indent-paren nil)
+
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(autoload 'espresso-mode "espresso")
