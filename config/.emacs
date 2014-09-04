@@ -61,6 +61,10 @@
 (setq web-mode-css-indent-offset 2)
 (setq js2-basic-offset 2)
 
+(setq js2-mode-hook
+  '(lambda () (progn
+    (set-variable 'indent-tabs-mode nil))))
+
 (add-to-list 'load-path "scss-mode")
 (require 'scss-mode)
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
