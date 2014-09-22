@@ -32,7 +32,12 @@
 (autoload 'find-file-in-project "find-file-in-project" "Find file in project." t)
 (global-set-key (kbd "M-n") 'find-file-in-project)
 
-(setq ffip-find-options "-not -regex \".*/\.tmp/.*\" -not -regex \".*/bower_components/.*\" -not -regex \".*/build/.*\" -not -regex \".*/node_modules/.*\" -not -regex \".*/vendor/.*\" -not -regex \".*/public/system/.*\" -not -regex \".*/*.png\" -not -regex \".*/*.ttf\" -not -regex \".*/*.otf\" -not -regex \".*/dist/.*\"")
+(defvar ffip-project-ignored-folders
+  '("tmp" "bower_components" "build" "node_modules" "vendor" "public")
+  "A list of all directories in the project to be ignored.
+It should be set in .dir-locals.el in the root of the project.
+The folders listed there will be added to the ones in the list
+`ffip-ignored-folders'")
 
 (add-to-list 'load-path "rspec-mode")
 (require 'rspec-mode)
