@@ -193,8 +193,8 @@ The folders listed there will be added to the ones in the list
 ;;(ido-mode -1)
 
 ;; Rinari
-(add-to-list 'load-path "~/Code/rinari")
-(require 'rinari)
+;;(add-to-list 'load-path "~/Code/rinari")
+;;(require 'rinari)
 
 ;; for clojure
 ;;(require 'package)
