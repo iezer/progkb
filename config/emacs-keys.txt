@@ -8,9 +8,8 @@ C-k     - kill to end of line
 
 M-(number) - Change to window number shown in red. This is window-number-meta-mode
 
-C-c C-j  - terminal char mode (like command line)
-C-c C-k  - terminal line mode (like editor)
-
+C-c C-j  - terminal char mode (like editor)
+C-c C-k  - terminal line mode (like command line) - K for Kommand Line
 Ruby Next Block     C-M-n
 Ruby Previous Block C-M-p
 

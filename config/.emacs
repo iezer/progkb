@@ -8,7 +8,7 @@
    :box '(:line-width 6 :color "gray20" :style nil))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
+(prefer-coding-system 'utf-8-unix)
 (setq indent-tabs-mode nil) ; always replace tabs with spaces
 
 (global-set-key (kbd "M-i") 'dabbrev-expand)
@@ -134,15 +134,19 @@ The folders listed there will be added to the ones in the list
  ; space before and after makes git-gutter behave
 (setq linum-format "%4d ")
 
-
 ;;(require 'twittering-mode)
+
+(defun ansi-colorize-current-buffer ()
+  "Colorize ansi escape sequences in the current buffer."
+  (interactive)
+  (ansi-color-apply-on-region (point-min) (point-max)))
 
 (define-derived-mode rails-log-mode ruby-mode "Rails log"
   "Major mode for viewing Rails log files.")
 (add-to-list 'auto-mode-alist '("\\.log\\'" . rails-log-mode))
 (add-hook 'rails-log-mode-hook 'auto-revert-tail-mode)
+(add-hook 'rails-log-mode-hook 'ansi-colorize-current-buffer)
 (add-hook 'rails-log-mode-hook 'end-of-buffer)
-;;(add-hook 'rails-log-mode-hook (ansi-color-apply-on-region (point-min) (point-max)))
 
 ;; line numbers for specific modes
 (global-linum-mode)
