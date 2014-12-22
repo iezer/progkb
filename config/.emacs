@@ -28,16 +28,10 @@
 ;;(require 'rvm)
 ;;(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
 
-;;(add-to-list 'load-path "~/.emacs.d/find-file-in-project")
-(autoload 'find-file-in-project "find-file-in-project" "Find file in project." t)
-(global-set-key (kbd "M-n") 'find-file-in-project)
+(global-set-key (kbd "M-n") 'fiplr-find-file)
 
-(defvar ffip-project-ignored-folders
-  '("tmp" "bower_components" "build" "node_modules" "vendor" "public")
-  "A list of all directories in the project to be ignored.
-It should be set in .dir-locals.el in the root of the project.
-The folders listed there will be added to the ones in the list
-`ffip-ignored-folders'")
+(setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "build" "node_modules" "vendor" "public" "dist" ".git" ".svn"))
+			    (files ("*.jpg" "*.png" "*.zip" "*~"))))
 
 (add-to-list 'load-path "rspec-mode")
 (require 'rspec-mode)
@@ -170,14 +164,9 @@ The folders listed there will be added to the ones in the list
 (require 'git-gutter)
 (global-git-gutter-mode t)
 
-;; (require 'package)
-;; (add-to-list 'package-archives
-;;              '("melpa" . "http://melpa.milkbox.net/packages/") t)
-;; (package-initialize)
-;; (add-to-list 'package-archives-enable-alist
-;;              '("melpa" "magit" "git-commit-mode"))
-
-;;  "git-rebase-mode"
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 
 ;;(add-to-list 'load-path "~/Code/magit/bin/")
