@@ -1,3 +1,11 @@
+LESS commands
+[space], [b] forward and back 1 page
+[j], [k],    forward and back 1 line
+g, G         beginning and end of file
+=            file info
+/   search   n, N next, previous search, ? serach backward
+/^diff goes to next file in git diff
+
 Emacs keyboard shortcuts
 
 # Put a .emacs file in your project root directory

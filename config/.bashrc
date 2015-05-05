@@ -1,5 +1,8 @@
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -19,6 +22,7 @@ alias pgr='pg_restore --verbose --clean --no-acl --no-owner -h localhost -U isaa
 alias pgd="curl -o latest.dump `heroku pgbackups:url -a $1`"
 alias pgconfig='emacs /usr/local/var/postgres/postgresql.conf'
 alias rc='source .powenv; bundle exec rails console'
+alias rs='bundle exec rails server'
 alias rdb='source .powenv; bundle exec rails dbconsole'
 alias bi='bundle install'
 alias br='bundle exec rake'
@@ -26,3 +30,6 @@ alias be='bundle exec'
 alias brm='bundle exec rake db:migrate;bundle exec rake db:test:prepare'
 alias brr='bundle exec rake db:rollback;bundle exec rake db:test:prepare'
 alias cssclean='find . -name *.sass-cache | xargs rm -rf;find app -name *.css | xargs rm;find app -name *.css.map | xargs rm'
+alias apipie='APIPIE_RECORD=examples bundle exec rspec spec/controllers/api && rake apipie:static && rake apipie:cache'
+alias es='ember server'
+alias em='emacs'

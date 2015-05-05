@@ -30,8 +30,8 @@
 
 (global-set-key (kbd "M-n") 'fiplr-find-file)
 
-(setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "build" "node_modules" "vendor" "public" "dist" ".git" ".svn"))
-			    (files ("*.jpg" "*.png" "*.zip" "*~"))))
+(setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" ".git" ".svn"))
+			    (files ("*.jpg" "*.png" "*.zip" "*~" "#*#"))))
 
 (add-to-list 'load-path "rspec-mode")
 (require 'rspec-mode)
@@ -104,6 +104,7 @@
 
 ;(add-to-list 'load-path "wgrep-ag.el")
 ;(require 'wgrep-ag)
+(set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" ".git" ".svn"))
 
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\Gemfile\\'" . ruby-mode))
