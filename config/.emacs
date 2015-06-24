@@ -163,10 +163,9 @@
 (require 'git-gutter)
 (global-git-gutter-mode t)
 
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
+;; (require 'package)
+;; (add-to-list 'package-archives
+;;              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 ;;(add-to-list 'load-path "~/Code/magit/bin/")
 ;;(eval-after-load 'info
@@ -215,10 +214,13 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (autoload 'espresso-mode "espresso")
 
-(add-to-list 'load-path "~/.emacs.d/ember-mode/")
-(require 'ember-mode)
+;; (add-to-list 'load-path "~/.emacs.d/ember-mode/")
+;; (require 'ember-mode)
 
 (add-to-list 'load-path
 	     "yasnippet.el")
 (require 'yasnippet)
 (yas-global-mode 1)
+
+(electric-pair-mode t)
+(push '(?\' . ?\') electric-pair-pairs)
