@@ -1,0 +1,9 @@
+# -*- mode: js2-mode; require-final-newline: nil -*-
+# name: setupController
+# key: setupC
+# binding: direct-keybinding
+# --
+setupController: function(controller, model) {
+  this._super(controller, model);
+  $0
+}
