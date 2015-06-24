@@ -3,6 +3,6 @@
 # key: andT
 # binding: direct-keybinding
 # --
-andThen(function() {
+andThen(() => {
   $0
 });
