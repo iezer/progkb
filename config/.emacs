@@ -48,10 +48,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.handlebars\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
@@ -219,3 +217,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/ember-mode/")
 (require 'ember-mode)
+
+(add-to-list 'load-path
+	     "yasnippet.el")
+(require 'yasnippet)
+(yas-global-mode 1)

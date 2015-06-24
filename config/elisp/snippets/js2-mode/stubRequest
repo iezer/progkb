@@ -1,0 +1,13 @@
+# -*- mode: js2-mode; require-final-newline: nil -*-
+# name: stubRequest ... ...
+# key: stubR
+# binding: direct-keybinding
+# --
+stubRequest('$1', '$2', function(request) {
+  $3
+  return this.success({
+    data: {
+      $4
+    }
+  });
+});

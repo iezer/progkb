@@ -1,0 +1,8 @@
+# -*- mode: js2-mode; require-final-newline: nil -*-
+# name: andThen
+# key: andT
+# binding: direct-keybinding
+# --
+andThen(function() {
+  $0
+});

@@ -8,6 +8,10 @@ g, G         beginning and end of file
 
 Emacs keyboard shortcuts
 
+web-mode
+  C-c C-f code folding
+  C-c C-o toggle folding 1 element
+
 # Put a .emacs file in your project root directory
 
 M-SPC -   start mark
