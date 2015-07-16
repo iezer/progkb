@@ -1,0 +1,10 @@
+# -*- mode: js2-mode; require-final-newline: nil -*-
+# name: property Comment
+# key: docp
+# binding:direct-keybinding
+# --
+/**
+ * $3
+ * @property $1
+ * @type {$2}
+ */

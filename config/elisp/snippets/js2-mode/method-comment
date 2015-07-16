@@ -1,0 +1,10 @@
+# -*- mode: js2-mode; require-final-newline: nil -*-
+# name: method Comment
+# key: docm
+# binding:direct-keybinding
+# --
+/**
+ * $4
+ * @method $1
+ * @param {$2} $3
+ */

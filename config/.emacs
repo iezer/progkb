@@ -224,3 +224,4 @@
 
 (electric-pair-mode t)
 (push '(?\' . ?\') electric-pair-pairs)
+(push '(?\` . ?\`) electric-pair-pairs)

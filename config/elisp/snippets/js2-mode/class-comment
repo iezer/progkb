@@ -1,0 +1,9 @@
+# -*- mode: js2-mode; require-final-newline: nil -*-
+# name: class Comment
+# key: docc
+# binding:direct-keybinding
+# --
+/**
+ * $2
+ * @class $1
+ */

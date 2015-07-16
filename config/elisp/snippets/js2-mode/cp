@@ -1,8 +1,8 @@
 # -*- mode: js2-mode; require-final-newline: nil -*-
-# name: andThen
-# key: andT
+# name: computedProperty
+# key: cp
 # binding: direct-keybinding
 # --
-andThen(function() {
-  $0
-});
+Ember.computed('$1', function(){
+  $2
+})
