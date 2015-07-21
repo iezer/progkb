@@ -1,14 +1,14 @@
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-source ~/Code/.git-completion.sh
-source ~/Code/.git-prompt.sh
-export PS1='\W$(__git_ps1 " (%s)") \$ '
+#export PATH="/usr/local/heroku/bin:$PATH"
+#source ~/Code/.git-completion.sh
+#source ~/Code/.git-prompt.sh
+#export PS1='\W$(__git_ps1 " (%s)") \$ '
 #export PS1='[\u@h \W$(__git_ps1 " (%s)")]\$ '
 
 #aliases
@@ -19,7 +19,7 @@ export PS1='\W$(__git_ps1 " (%s)") \$ '
 alias rt='bundle exec rake tmp:cache:clear;touch tmp/restart.txt'
 alias sk='source .powenv;bundle exec sidekiq -c 2 -q default -q snapshot'
 alias pgr='pg_restore --verbose --clean --no-acl --no-owner -h localhost -U isaac -d tobe_development latest.dump'
-alias pgd="curl -o latest.dump `heroku pgbackups:url -a $1`"
+#alias pgd="curl -o latest.dump `heroku pgbackups:url -a $1`"
 alias pgconfig='emacs /usr/local/var/postgres/postgresql.conf'
 alias rc='source .powenv; bundle exec rails console'
 alias rs='bundle exec rails server'

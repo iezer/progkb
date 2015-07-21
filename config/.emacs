@@ -24,6 +24,9 @@
     ;; (global-set-key "\C-ck" 'mode-compile-kill)
 
 (add-to-list 'load-path "~/Code/elisp")
+(add-to-list 'load-path "cl-lib")
+(add-to-list 'load-path "grizzl")
+(add-to-list 'load-path "fiplr")
 
 ;;(require 'rvm)
 ;;(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
@@ -163,9 +166,12 @@
 (require 'git-gutter)
 (global-git-gutter-mode t)
 
-;; (require 'package)
-;; (add-to-list 'package-archives
-;;              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+	                  '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(package-initialize)
 
 ;;(add-to-list 'load-path "~/Code/magit/bin/")
 ;;(eval-after-load 'info
