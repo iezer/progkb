@@ -6,9 +6,9 @@
 
 ### Added by the Heroku Toolbelt
 #export PATH="/usr/local/heroku/bin:$PATH"
-#source ~/Code/.git-completion.sh
-#source ~/Code/.git-prompt.sh
-#export PS1='\W$(__git_ps1 " (%s)") \$ '
+source ~/Code/progkb/config/git-completion.sh
+source ~/Code/progkb/config/git-prompt.sh
+export PS1='\W$(__git_ps1 " (%s)") \$ '
 #export PS1='[\u@h \W$(__git_ps1 " (%s)")]\$ '
 
 #aliases
