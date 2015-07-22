@@ -6,3 +6,4 @@ git config --global core.editor emacs
 git config --global core.excludesfile ./.gitignore
 git config --global user.name "Isaac Ezer"
 git config --global user.email isaac.ezer@gmail.com
+git config --global push.default simple
