@@ -231,3 +231,4 @@
 (electric-pair-mode t)
 (push '(?\' . ?\') electric-pair-pairs)
 (push '(?\` . ?\`) electric-pair-pairs)
+(global-set-key (kbd "M-t") 'transpose-lines)
