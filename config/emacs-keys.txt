@@ -8,6 +8,10 @@ g, G         beginning and end of file
 
 Emacs keyboard shortcuts
 
+C-M-a or e forward back defun
+C-M-h select current defun
+M-k kill sentence
+
 web-mode
   C-c C-f code folding
   C-c C-o toggle folding 1 element
