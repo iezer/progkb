@@ -43,9 +43,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(dired-trivial-filenames "^\\.\\.?$\\|^#|*~$")
  '(rspec-use-rake-when-possible nil)
- '(web-mode-use-tabs nil)
- '(web-mode-disable-auto-indentation nil))
+ '(web-mode-disable-auto-indentation nil)
+ '(web-mode-use-tabs nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -61,6 +62,11 @@
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq js2-basic-offset 2)
+
+(setq dired-mode-hook
+  '(lambda () (progn
+    (set-variable 'dired-hide-details-mode t))))
+
 
 (setq js2-mode-hook
   '(lambda () (progn
@@ -94,18 +100,12 @@
 
 (column-number-mode)
 
-(add-to-list 'load-path "ag.el")
 (require 'ag)
 (setq ag-reuse-buffers t)
 (setq ag-highlight-search t)
 (global-set-key (kbd "M-l") 'ag-project)
 (defalias 'agk 'ag-kill-buffers)
 
-(add-to-list 'load-path "wgrep.el")
-(require 'wgrep)
-
-;(add-to-list 'load-path "wgrep-ag.el")
-;(require 'wgrep-ag)
 (set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" ".git" ".svn"))
 
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
@@ -240,3 +240,10 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
+
+;; Hide dired details by default
+(load "dired-x")
+(add-hook 'dired-mode-hook
+	  (lambda () (dired-hide-details-mode 1)))
+(add-hook 'dired-mode-hook
+	  (lambda () (dired-omit-mode 1)))

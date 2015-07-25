@@ -8,6 +8,14 @@ g, G         beginning and end of file
 
 Emacs keyboard shortcuts
 
+C-h m - help for current mode
+
+AG:
+ C-c C-p wgrep-mode
+ C-c C-f next-error-follow-minor-mode
+ n/p nav
+ q close, k kill
+
 C-M-a or e forward back defun
 C-M-h select current defun
 M-k kill sentence
