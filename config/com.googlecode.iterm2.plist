@@ -31063,9 +31063,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>995 110 445 103 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>401 392 924 485 0 0 1440 877 </string>
+	<string>-1146 572 924 485 -1920 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1546 274 1105 698 -1920 0 1920 1057 </string>
+	<string>-1546 420 745 551 -1920 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_2BE411A6-B7F7-4BF9-9139-8090109EFBB0</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -31286,7 +31286,7 @@
 			<key>Cursor Type</key>
 			<integer>2</integer>
 			<key>Custom Command</key>
-			<string>Yes</string>
+			<string>No</string>
 			<key>Custom Directory</key>
 			<string>Recycle</string>
 			<key>Default Bookmark</key>
@@ -31317,7 +31317,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>bash</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -31799,7 +31799,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>459115363.11166197</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>459464334.086456</real>
+	<real>459700163.91750997</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
