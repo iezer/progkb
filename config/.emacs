@@ -107,6 +107,7 @@
 (defalias 'agk 'ag-kill-buffers)
 
 (set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" ".git" ".svn"))
+(set 'ag-ignore-list '("tmp" "build" "vendor" "public" "dist" ".git" ".svn"))
 
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\Gemfile\\'" . ruby-mode))
@@ -247,3 +248,10 @@
 	  (lambda () (dired-hide-details-mode 1)))
 (add-hook 'dired-mode-hook
 	  (lambda () (dired-omit-mode 1)))
+
+;; (add-to-list
+;;  'comint-preoutput-filter-functions
+;;  (lambda (output)
+;;    (replace-regexp-in-string "\\[[0-9]+[GK]" "" output)))
+
+(setenv "NODE_NO_READLINE" "1")
