@@ -3,6 +3,7 @@
 	email = isaac.ezer@gmail.com
 [core]
 	editor = emacs
+	excludesfile = ~/.gitignore
 [color]
 	ui = auto
 [push]
