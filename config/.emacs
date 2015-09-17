@@ -36,17 +36,17 @@
 (setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" ".git" ".svn"))
 			    (files ("*.jpg" "*.png" "*.zip" "*~" "#*#"))))
 
-(add-to-list 'load-path "rspec-mode")
-(require 'rspec-mode)
+;;(add-to-list 'load-path "rspec-mode")
+;;(require 'rspec-mode)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(dired-trivial-filenames "^\\.\\.?$\\|^#|*~$")
- '(rspec-use-rake-when-possible nil)
- '(web-mode-disable-auto-indentation nil)
- '(web-mode-use-tabs nil))
+ ;;'(rspec-use-rake-when-possible nil)
+ '(dired-trivial-filenames "^\\.\\.?$\\|^#|*~$"))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -61,6 +61,9 @@
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
+(setq web-mode-attr-indent-offset 2)
+(setq web-mode-enable-auto-closing t)
+(setq-default indent-tabs-mode nil)
 (setq js2-basic-offset 2)
 
 (setq dired-mode-hook
@@ -162,9 +165,10 @@
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
-(require 'git)
-(require 'git-blame)
+;;(require 'git)
+;;(require 'git-blame)
 (require 'git-commit-mode)
+(require 'git-rebase-mode)
 (require 'git-gutter)
 (global-git-gutter-mode t)
 
@@ -213,8 +217,8 @@
 (window-number-mode t)
 (window-number-meta-mode t)
 
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+;;(require 'yaml-mode)
+;;(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 (setq ruby-deep-indent-paren nil)
 

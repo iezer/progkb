@@ -23,6 +23,7 @@ M-k kill sentence
 web-mode
   C-c C-f code folding
   C-c C-o toggle folding 1 element
+  C-c C-n up down open/close tag
 
 # Put a .emacs file in your project root directory
 
