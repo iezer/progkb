@@ -31026,10 +31026,16 @@
 	<false/>
 	<key>NSColorPanelMode</key>
 	<string>5</string>
+	<key>NSColorPickerPageableNameListDefaults</key>
+	<string>1Emacs</string>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Code/progkb/config</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 448}</string>
+	<string>{854, 542}</string>
+	<key>NSNavPanelExpandedStateForSaveMode</key>
+	<true/>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -31047,25 +31053,35 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>302</string>
+		<string>198</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<key>NSToolbar Configuration Terminal Toolbar</key>
 	<dict>
+		<key>TB Display Mode</key>
+		<integer>1</integer>
+		<key>TB Icon Size Mode</key>
+		<integer>2</integer>
 		<key>TB Is Shown</key>
+		<integer>0</integer>
+		<key>TB Size Mode</key>
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>277 330 231 329 0 0 1440 877 </string>
+	<string>307 274 214 309 0 0 1440 878 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>995 110 445 103 0 0 1440 877 </string>
+	<string>885 459 445 270 0 0 1440 900 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>-1146 572 924 485 -1920 0 1920 1057 </string>
+	<string>331 56 924 485 0 0 1440 900 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>528 578 384 129 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1546 420 745 551 -1920 0 1920 1057 </string>
+	<string>0 5 1603 867 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>129 3 1290 872 0 0 1440 878 </string>
 	<key>NeverWarnAboutShortLivedSessions_2BE411A6-B7F7-4BF9-9139-8090109EFBB0</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -31674,7 +31690,7 @@
 			<key>Silence Bell</key>
 			<true/>
 			<key>Smart Cursor Color</key>
-			<true/>
+			<false/>
 			<key>Smart Selection Rules</key>
 			<array>
 				<dict>
@@ -31797,9 +31813,9 @@
 		</dict>
 	</array>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>459115363.11166197</real>
+	<real>453220340.29624498</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>459700163.91750997</real>
+	<real>465303097.14880598</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -31846,7 +31862,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/iezer/Code/progkb/config</string>
+	<string>/Users/isaac/Code/progkb/config</string>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -31862,7 +31878,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-07-27T14:13:27Z</date>
+	<date>2015-10-06T15:02:22Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -31893,6 +31909,10 @@
 	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
+	<key>WebKitDefaultFontSize</key>
+	<integer>11</integer>
+	<key>WebKitStandardFont</key>
+	<string>.Lucida Grande UI</string>
 	<key>WindowNumber</key>
 	<true/>
 	<key>WindowStyle</key>
