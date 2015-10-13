@@ -6,9 +6,5 @@
 stubRequest('$1', '$2', (request) => {
   assert.ok(true, '$1 $2 api called');
   $3
-  return this.success({
-    data: {
-      $4
-    }
-  });
+  return request.ok({ $4 });
 });
