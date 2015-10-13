@@ -174,9 +174,9 @@
 
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives
-	                  '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/"))
+;; (add-to-list 'package-archives
+;; 	                  '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
 ;;(add-to-list 'load-path "~/Code/magit/bin/")
@@ -224,7 +224,7 @@
 
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-;;(autoload 'espresso-mode "espresso")
+(autoload 'espresso-mode "espresso")
 
 ;; (add-to-list 'load-path "~/.emacs.d/ember-mode/")
 ;; (require 'ember-mode)
@@ -239,10 +239,10 @@
 (push '(?\` . ?\`) electric-pair-pairs)
 (global-set-key (kbd "M-t") 'transpose-lines)
 
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c C-c") 'mc/edit-lines)
+(global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c .") 'mc/mark-all-like-this)
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
 

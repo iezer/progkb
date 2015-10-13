@@ -3,10 +3,11 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-	kill-region
-	yas-expand
-	))
+        kill-region
+        yas-expand
+        ))
 
 (setq mc/cmds-to-run-once
       '(
-	))
+        keyboard-escape-quit
+        ))

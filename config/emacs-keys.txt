@@ -16,6 +16,8 @@ AG:
  n/p nav
  q close, k kill
 
+M-t transpose lines
+
 C-M-a or e forward back defun
 C-M-h select current defun
 M-k kill sentence
