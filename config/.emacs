@@ -109,6 +109,11 @@
 (global-set-key (kbd "M-l") 'ag-project)
 (defalias 'agk 'ag-kill-buffers)
 
+(autoload 'wgrep-ag-setup "wgrep-ag")
+(add-hook 'ag-mode-hook 'wgrep-ag-setup)
+(setq wgrep-auto-save-buffer t)
+(setq wgrep-enable-key "r")
+
 (set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" ".git" ".svn"))
 (set 'ag-ignore-list '("tmp" "build" "vendor" "public" "dist" ".git" ".svn"))
 

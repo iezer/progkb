@@ -11,7 +11,9 @@ Emacs keyboard shortcuts
 C-h m - help for current mode
 
 AG:
- C-c C-p wgrep-mode
+ r wgrep-mode
+ C-x C-s save changes
+ C-x C-q exit wgrep
  C-c C-f next-error-follow-minor-mode
  n/p nav
  q close, k kill
