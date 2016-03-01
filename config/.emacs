@@ -58,6 +58,9 @@
 (add-to-list 'auto-mode-alist '("\\.handlebars\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.scss?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.sass?\\'" . web-mode))
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
@@ -74,15 +77,6 @@
 (setq js2-mode-hook
   '(lambda () (progn
     (set-variable 'indent-tabs-mode nil))))
-
-(add-to-list 'load-path "scss-mode")
-(require 'scss-mode)
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
-(add-to-list 'auto-mode-alist '("\\.sass\\'" . scss-mode))
-(setq css-indent-offset 2)
-
-(autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
-(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
 
 ;; CoffeeScript uses two spaces.
 (make-local-variable 'tab-width)
