@@ -1,8 +1,8 @@
 # -*- mode: js2-mode; require-final-newline: nil -*-
-# name: computedProperty
-# key: cp
+# name: each
+# key: each
 # binding: direct-keybinding
 # --
-computed('$1', function(){
-  $2
-})
+{{#each $1 as |$2|}}
+  $3
+{{/each}}
