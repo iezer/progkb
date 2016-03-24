@@ -9,6 +9,7 @@
 source ~/Code/progkb/config/git-completion.bash
 source ~/Code/progkb/config/git-prompt.sh
 export PS1='\W$(__git_ps1 " (%s)") \$ '
+export SHELL="/bin/bash"
 #export PS1='[\u@h \W$(__git_ps1 " (%s)")]\$ '
 
 #aliases
