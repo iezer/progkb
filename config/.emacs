@@ -267,3 +267,7 @@
 ;;    (replace-regexp-in-string "\\[[0-9]+[GK]" "" output)))
 
 (setenv "NODE_NO_READLINE" "1")
+
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+(setq create-lockfiles nil)

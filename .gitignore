@@ -3,4 +3,5 @@
 # temp files for sublime and emacs
 *~
 #*#
+.*~
 .divshot-cache
