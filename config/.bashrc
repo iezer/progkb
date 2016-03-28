@@ -41,3 +41,6 @@ alias eg='ember g'
 alias egp='ember g -p'
 alias em='emacs'
 alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
+
+export NVM_DIR="/Users/isaac/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
