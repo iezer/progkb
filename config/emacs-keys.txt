@@ -1,3 +1,8 @@
+flycheck
+C-c ! l - see full list of errors in a buffer. Details
+C-c ! n - next error
+C-c ! p - previous error
+
 regexp search and replace
 
 replace-regexp "\(\w+\)": RET \1:
