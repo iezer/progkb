@@ -1,3 +1,7 @@
+regexp search and replace
+
+replace-regexp "\(\w+\)": RET \1:
+
 LESS commands
 [space], [b] forward and back 1 page
 [j], [k],    forward and back 1 line
