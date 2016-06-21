@@ -6,6 +6,7 @@
 
 ### Added by the Heroku Toolbelt
 #export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="./node_modules/.bin:$PATH"
 source ~/Code/progkb/config/git-completion.bash
 source ~/Code/progkb/config/git-prompt.sh
 export PS1='\W$(__git_ps1 " (%s)") \$ '
