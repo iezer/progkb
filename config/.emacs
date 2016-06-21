@@ -14,7 +14,8 @@
 (global-set-key (kbd "M-i") 'dabbrev-expand)
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 (global-set-key (kbd "M-T") 'auto-revert-tail-mode)
-
+;; (global-set-key (kbd "M-%") 'query-replace-regexp)
+;; (define-key global-map "\C-s" 'isearch-forward-regexp)
 ;;mode-compile
     ;; (autoload 'mode-compile "mode-compile"
     ;;   "Command to compile current buffer file based on the major mode" t)
@@ -33,7 +34,7 @@
 
 (global-set-key (kbd "M-n") 'fiplr-find-file)
 
-(setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" ".git" ".svn"))
+(setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn"))
 			    (files ("*.jpg" "*.png" "*.zip" "*~" "#*#"))))
 
 ;;(add-to-list 'load-path "rspec-mode")
@@ -114,7 +115,7 @@
 (setq wgrep-auto-save-buffer t)
 (setq wgrep-enable-key "r")
 
-(set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" ".git" ".svn"))
+(set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn"))
 (set 'ag-ignore-list '("tmp" "build" "vendor" "public" "dist" ".git" ".svn"))
 
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
