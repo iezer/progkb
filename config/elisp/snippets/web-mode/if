@@ -1,8 +1,10 @@
 # -*- mode: js2-mode; require-final-newline: nil -*-
-# name: computedProperty
-# key: cp
+# name: if
+# key: if
 # binding: direct-keybinding
 # --
-computed('$1', function(){
+{{#if $1}}
   $2
-})
+{{else}}
+  $3
+{{/if}}

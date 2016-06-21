@@ -45,7 +45,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;;'(rspec-use-rake-when-possible nil)
+ ;; '(css-tab-mode (quote indent))
  '(dired-trivial-filenames "^\\.\\.?$\\|^#|*~$"))
 
 (custom-set-faces
@@ -59,6 +59,9 @@
 (add-to-list 'auto-mode-alist '("\\.handlebars\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.sass?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.scss?\\'" . web-mode))
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
@@ -76,14 +79,14 @@
   '(lambda () (progn
     (set-variable 'indent-tabs-mode nil))))
 
-(add-to-list 'load-path "scss-mode")
-(require 'scss-mode)
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
-(add-to-list 'auto-mode-alist '("\\.sass\\'" . scss-mode))
-(setq css-indent-offset 2)
+;; (add-to-list 'load-path "scss-mode")
+;; (require 'scss-mode)
+;; (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+;; (add-to-list 'auto-mode-alist '("\\.sass\\'" . scss-mode))
+;; (setq css-indent-offset 2)
 
-(autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
-(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
+;; (autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
+;; (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
 
 ;; CoffeeScript uses two spaces.
 (make-local-variable 'tab-width)
