@@ -304,6 +304,9 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
+(add-to-list 'auto-mode-alist '("\\.ex\\'" . elixir-mode))
+;;(add-to-list 'auto-mode-alist '("\\.ex\\'" . alchemist-mode))
+
 (provide '.emacs)
 
 ;;; .emacs ends here
