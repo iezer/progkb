@@ -31052,9 +31052,9 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 119 924 485 0 0 1280 800 </string>
+	<string>269 119 924 485 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1571 199 1280 762 1280 0 1920 1057 </string>
+	<string>1281 199 1873 858 1280 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_2BE411A6-B7F7-4BF9-9139-8090109EFBB0</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -31606,11 +31606,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>Monaco 10</string>
+			<string>Monaco 8</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 13</string>
+			<string>Monaco 11</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -31788,7 +31788,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>479061068.08699298</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>479915670.16584098</real>
+	<real>488819106.23050302</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -31851,7 +31851,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-03-18T20:48:16Z</date>
+	<date>2016-07-01T18:21:57Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -31885,7 +31885,7 @@
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
-	<string>.Lucida Grande UI</string>
+	<string>.AppleSystemUIFont</string>
 	<key>WindowNumber</key>
 	<true/>
 	<key>WindowStyle</key>

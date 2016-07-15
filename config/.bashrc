@@ -6,7 +6,7 @@
 
 ### Added by the Heroku Toolbelt
 #export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="./node_modules/.bin:$PATH"
+export PATH="./node_modules/.bin:/usr/local/lib/node_modules/.bin:$PATH"
 source ~/Code/progkb/config/git-completion.bash
 source ~/Code/progkb/config/git-prompt.sh
 export PS1='\W$(__git_ps1 " (%s)") \$ '
@@ -42,6 +42,8 @@ alias eg='ember g'
 alias egp='ember g -p'
 alias em='emacs'
 alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
-
+alias gr='git rebase -i'
+alias grm='git rebase -i origin/master'
+alias grc='git rebase --continue'
 export NVM_DIR="/Users/isaac/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

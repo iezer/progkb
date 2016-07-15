@@ -35,7 +35,7 @@
 (global-set-key (kbd "M-n") 'fiplr-find-file)
 
 (setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn"))
-			    (files ("*.jpg" "*.png" "*.zip" "*~" "#*#"))))
+			    (files ("*.jpg" "*.png" "*.log" "*.zip" "*~" "#*#"))))
 
 ;;(add-to-list 'load-path "rspec-mode")
 ;;(require 'rspec-mode)
@@ -119,7 +119,7 @@
 (setq wgrep-enable-key "r")
 
 (set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn"))
-(set 'ag-ignore-list '("tmp" "build" "vendor" "public" "dist" ".git" ".svn"))
+(set 'ag-ignore-list '("tmp" "build" "vendor" "public" "dist" ".git" ".svn" "*.log"))
 
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\Gemfile\\'" . ruby-mode))
@@ -222,10 +222,6 @@
 ;;   (when (not (package-installed-p p))
 ;;     (package-install p)))
 
-(require 'window-number)
-(window-number-mode t)
-(window-number-meta-mode t)
-
 ;;(require 'yaml-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
@@ -306,6 +302,10 @@
 
 (add-to-list 'auto-mode-alist '("\\.ex\\'" . elixir-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.ex\\'" . alchemist-mode))
+
+(require 'window-number)
+(window-number-mode t)
+(window-number-meta-mode t)
 
 (provide '.emacs)
 
