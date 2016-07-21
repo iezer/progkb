@@ -45,5 +45,6 @@ alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_
 alias gr='git rebase -i'
 alias grm='git rebase -i origin/master'
 alias grc='git rebase --continue'
+alias gfo='git fetch origin'
 export NVM_DIR="/Users/isaac/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
