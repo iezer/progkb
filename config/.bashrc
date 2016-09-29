@@ -3,7 +3,6 @@
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
-
 ### Added by the Heroku Toolbelt
 #export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="./node_modules/.bin:/usr/local/lib/node_modules/.bin:$PATH"
@@ -46,5 +45,9 @@ alias gr='git rebase -i'
 alias grm='git rebase -i origin/master'
 alias grc='git rebase --continue'
 alias gfo='git fetch origin'
+alias gad='git add .'
+alias gs='git status'
+alias glp='git log -p'
+alias gpf='git push -f'
 export NVM_DIR="/Users/isaac/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
