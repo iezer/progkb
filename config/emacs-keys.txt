@@ -1,3 +1,4 @@
+C-x d dired mode,
 flycheck
 C-c ! l - see full list of errors in a buffer. Details
 C-c ! n - next error
