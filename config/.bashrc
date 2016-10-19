@@ -49,5 +49,5 @@ alias gad='git add .'
 alias gs='git status'
 alias glp='git log -p'
 alias gpf='git push -f'
-export NVM_DIR="/Users/isaac/.nvm"
+export NVM_DIR="/$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
