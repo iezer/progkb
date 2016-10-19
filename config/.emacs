@@ -24,7 +24,7 @@
     ;;   "Command to kill a compilation launched by `mode-compile'" t)
     ;; (global-set-key "\C-ck" 'mode-compile-kill)
 
-(add-to-list 'load-path "~/Code/elisp")
+(add-to-list 'load-path "~/elisp")
 (add-to-list 'load-path "cl-lib")
 (add-to-list 'load-path "grizzl")
 (add-to-list 'load-path "fiplr")
