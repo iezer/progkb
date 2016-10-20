@@ -6,8 +6,18 @@
  * Sample code from playing with various languages
  * Code done for interviews
  * Trying out new frameworks like ember.js
- 
-## Setup
-`ln -s ~/Code/progkb/config/.gitignore ~/.gitignore`
 
-`git config --global core.excludesfile '~/.gitignore'`
+## Setup
+ * `.setup.sh`
+ * [Homebrew](http://brew.sh/)
+ * [Nvm](https://github.com/creationix/nvm#install-script)
+ * ember-cli `npm install -g ember-cli`
+ * bower `npm install -g bower`
+ * brew install emacs
+ * brew install the_silver_searcher
+ * Dash
+ * Dropbox
+ * 1password
+ * Gitx
+ * slack
+ * iterm
