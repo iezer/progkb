@@ -1,4 +1,4 @@
-# progkb
+.# progkb
 
 
 ## General Programming Knowledge Base and Test Code
@@ -21,3 +21,7 @@
  * Gitx
  * slack
  * iterm
+
+
+http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html#install_eslint_and_babel
+eslint-plugin-ember-rules
