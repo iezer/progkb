@@ -13,6 +13,7 @@
  * [Nvm](https://github.com/creationix/nvm#install-script)
  * ember-cli `npm install -g ember-cli`
  * bower `npm install -g bower`
+ * phantomjs `npm install -g phantom-prebuilt`
  * brew install emacs
  * brew install the_silver_searcher
  * Dash
