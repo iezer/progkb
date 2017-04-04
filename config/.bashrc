@@ -5,7 +5,7 @@
 
 ### Added by the Heroku Toolbelt
 #export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="./node_modules/.bin:/usr/local/lib/node_modules/.bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:./node_modules/.bin:/usr/local/lib/node_modules/.bin:/usr/local/bin:$PATH"
 source ~/Code/progkb/config/git-completion.bash
 source ~/Code/progkb/config/git-prompt.sh
 export PS1='\W$(__git_ps1 " (%s)") \$ '
@@ -33,7 +33,8 @@ alias brr='bundle exec rake db:rollback;bundle exec rake db:test:prepare'
 alias cssclean='find . -name *.sass-cache | xargs rm -rf;find app -name *.css | xargs rm;find app -name *.css.map | xargs rm'
 alias apipie='APIPIE_RECORD=examples bundle exec rspec spec/controllers/api && rake apipie:static && rake apipie:cache'
 alias es='ember server'
-alias espf='es --proxy http://manage.secretcdn-stg.net'
+alias espf='es --proxy https://manage.secretcdn-stg.net'
+alias espfp='es --proxy=https://manage.fastly.com -p 4203'
 alias et='ember test'
 alias ets='ember test --serve'
 alias etsf='ember test --serve --filter'
@@ -49,6 +50,7 @@ alias gad='git add .'
 alias gs='git status'
 alias glp='git log -p'
 alias gpf='git push -f'
-#export NVM_DIR="/$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-##nvm use --delete-prefix v6.9.0 --silent
+export NVM_DIR="/$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+nvm use --delete-prefix v6.9.1 --silent
+eval "$(rbenv init -)"
