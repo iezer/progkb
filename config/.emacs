@@ -45,8 +45,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(css-tab-mode (quote indent))
- '(dired-trivial-filenames "^\\.\\.?$\\|^#|*~$"))
+ '(dired-trivial-filenames "^\\.\\.?$\\|^#|*~$")
+ '(package-selected-packages
+   (quote
+    (string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -69,6 +71,7 @@
 (setq web-mode-enable-auto-closing t)
 (setq-default indent-tabs-mode nil)
 (setq js2-basic-offset 2)
+(setq js2-strict-inconsistent-return-warning nil)
 
 (setq dired-mode-hook
   '(lambda () (progn
@@ -110,7 +113,7 @@
 (require 'ag)
 (setq ag-reuse-buffers t)
 (setq ag-highlight-search t)
-(global-set-key (kbd "M-l") 'ag-project)
+(global-set-key (kbd "M-p") 'ag-project)
 (defalias 'agk 'ag-kill-buffers)
 
 (autoload 'wgrep-ag-setup "wgrep-ag")
@@ -184,8 +187,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
-;; (add-to-list 'package-archives
-;; 	                  '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+ (add-to-list 'package-archives
+ 	                  '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
 ;;(add-to-list 'load-path "~/Code/magit/bin/")
@@ -311,3 +314,15 @@
 (provide '.emacs)
 
 ;;; .emacs ends here
+;; (put 'downcase-region 'disabled nil)
+;; (put 'upcase-region 'disabled nil)
+
+(require 'string-inflection)
+(global-set-key (kbd "C-c u") 'string-inflection-underscore)
+(global-set-key (kbd "C-c c") 'string-inflection-camelcase)        ;; Force to CamelCase
+(global-set-key (kbd "C-c l") 'string-inflection-lower-camelcase)  ;; Force to lowerCamelCase
+
+(require 'multiple-cursors)
+(global-set-key (kbd "C-c d") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c a") 'mc/mark-all-like-this)

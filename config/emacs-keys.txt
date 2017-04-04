@@ -1,3 +1,9 @@
+fiplr reload, while searching: C-c r
+
+upcase - M-u (region C-x C-u)
+lowercase - M-l (region C-x C-l)
+capitalize - M-c
+
 C-x d dired mode,
 flycheck
 C-c ! l - see full list of errors in a buffer. Details
@@ -56,7 +62,7 @@ Cx-x v =   (vc-diff or git diff)
 
 Toggle Tail Mode - scroll to end and press M-T
 Find file in project - M-n
-Find in Project - M-l
+Find in Project - M-p
 Indent block - tab
 Comment block - M-;
 
