@@ -244,17 +244,14 @@
 (yas-global-mode 1)
 
 (electric-pair-mode t)
+;;(setq electric-pair-inhibit-if-helps-balance nil)
 (push '(?\' . ?\') electric-pair-pairs)
 (push '(?\` . ?\`) electric-pair-pairs)
 (global-set-key (kbd "M-t") 'transpose-lines)
 
-(global-set-key (kbd "C-c C-c") 'mc/edit-lines)
-(global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c .") 'mc/mark-all-like-this)
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
-
+"heloo"
 ;; Hide dired details by default
 (load "dired-x")
 (add-hook 'dired-mode-hook
