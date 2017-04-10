@@ -113,7 +113,7 @@
 (require 'ag)
 (setq ag-reuse-buffers t)
 (setq ag-highlight-search t)
-(global-set-key (kbd "M-p") 'ag-project)
+(global-set-key (kbd "M-s") 'ag-project)
 (defalias 'agk 'ag-kill-buffers)
 
 (autoload 'wgrep-ag-setup "wgrep-ag")
