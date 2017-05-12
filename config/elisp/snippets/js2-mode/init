@@ -1,8 +1,9 @@
 # -*- mode: js2-mode; require-final-newline: nil -*-
-# name: function
-# key: fun
+# name: init
+# key: init
 # binding: direct-keybinding
 # --
-function($1) {
-  $2
-})
+init() {
+  this._super(...arguments);
+  $0
+}

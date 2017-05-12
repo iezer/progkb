@@ -1,8 +1,6 @@
 # -*- mode: js2-mode; require-final-newline: nil -*-
-# name: function
-# key: fun
+# name: this.set
+# key: s
 # binding: direct-keybinding
 # --
-function($1) {
-  $2
-})
+this.set('$1', $2);

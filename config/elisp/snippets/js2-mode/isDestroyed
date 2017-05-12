@@ -1,8 +1,6 @@
 # -*- mode: js2-mode; require-final-newline: nil -*-
-# name: function
-# key: fun
+# name: isDestroyed
+# key: isD
 # binding: direct-keybinding
 # --
-function($1) {
-  $2
-})
+if (this.isDestroyed) { return; }
