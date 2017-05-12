@@ -52,5 +52,5 @@ alias glp='git log -p'
 alias gpf='git push -f'
 export NVM_DIR="/$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm use --delete-prefix v6.9.1 --silent
+nvm use --delete-prefix v6.9.3 --silent
 eval "$(rbenv init -)"
