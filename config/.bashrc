@@ -1,4 +1,3 @@
-
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
@@ -49,7 +48,13 @@ alias gfo='git fetch origin'
 alias gad='git add .'
 alias gs='git status'
 alias glp='git log -p'
+alias gp='git push'
 alias gpf='git push -f'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gco='git checkout'
+alias gd='git diff'
+alias gdc='git diff --cached'
 export NVM_DIR="/$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 nvm use --delete-prefix v6.9.1 --silent
