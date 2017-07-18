@@ -1,0 +1,6 @@
+# -*- mode: js2-mode; require-final-newline: nil -*-
+# name: ES6 fat arrow function
+# key: ($1)
+# binding: C-c f
+# --
+($1) => $2
