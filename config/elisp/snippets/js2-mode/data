@@ -9,6 +9,9 @@ data: [
     type: "$2",
     attributes: {
       $3
+    },
+    relationships: {
+      $4
     }
   }
 ]

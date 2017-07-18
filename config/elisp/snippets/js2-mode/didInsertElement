@@ -1,9 +1,9 @@
 # -*- mode: js2-mode; require-final-newline: nil -*-
-# name: setupController
-# key: setupC
+# name: didInsertElement
+# key: didI
 # binding: direct-keybinding
 # --
-setupController(controller, model) {
+didInsertElement() {
   this._super(...arguments);
   $0
 }

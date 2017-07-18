@@ -1,3 +1,15 @@
+Rectangles
+C-x r c - clear region replace with spaces
+C-x r k kill region rect
+C-x r t - replace text
+M-x string-insert-rectangle
+C-x <SPC> toggle rect mode
+
+(require 'multiple-cursors)
+(global-set-key (kbd "C-c d") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
+
 fiplr reload, while searching: C-c r
 
 upcase - M-u (region C-x C-u)

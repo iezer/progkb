@@ -35,7 +35,7 @@
 (global-set-key (kbd "M-n") 'fiplr-find-file)
 
 (setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn"))
-			    (files ("*.jpg" "*.png" "*.log" "*.zip" "*~" "#*#"))))
+			    (files ("*.jpg" "*.png" "*.log" "*.zip" "*~" "#*#" ".gitkeep"))))
 
 ;;(add-to-list 'load-path "rspec-mode")
 ;;(require 'rspec-mode)

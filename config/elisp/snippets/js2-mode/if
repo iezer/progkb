@@ -1,8 +1,6 @@
 # -*- mode: js2-mode; require-final-newline: nil -*-
-# name: function
-# key: fun
+# name: if
+# key: if
 # binding: direct-keybinding
 # --
-function($1) {
-  $2
-})
+if ($1) {$2}

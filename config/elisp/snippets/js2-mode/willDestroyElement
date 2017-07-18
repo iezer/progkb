@@ -1,0 +1,9 @@
+# -*- mode: js2-mode; require-final-newline: nil -*-
+# name: willDestroyElement
+# key: willD
+# binding: direct-keybinding
+# --
+willDestroyElement() {
+  $0
+  this._super(...arguments);
+}

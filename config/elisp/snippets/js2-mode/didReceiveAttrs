@@ -1,0 +1,9 @@
+ # -*- mode: js2-mode; require-final-newline: nil -*-
+# name: didReceiveAttrs
+# key: didR
+# binding: direct-keybinding
+# --
+didReceiveAttrs() {
+  this._super(...arguments);
+  $0
+}
