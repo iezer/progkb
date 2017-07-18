@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         kill-region
+        save-some-buffers
         string-inflection-camelcase
         string-inflection-underscore
         yas-expand

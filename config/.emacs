@@ -46,9 +46,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(dired-trivial-filenames "^\\.\\.?$\\|^#|*~$")
+ '(js-expr-indent-offset -2)
  '(package-selected-packages
    (quote
-    (string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist))))
+    (js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -230,7 +231,6 @@
 
 (setq ruby-deep-indent-paren nil)
 
-(autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.ts$" . js2-mode))
 (autoload 'espresso-mode "espresso")
