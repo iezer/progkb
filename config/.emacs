@@ -37,19 +37,19 @@
 (setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn"))
 			    (files ("*.jpg" "*.png" "*.log" "*.zip" "*~" "#*#" ".gitkeep"))))
 
-;;(add-to-list 'load-path "rspec-mode")
-;;(require 'rspec-mode)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(dired-trivial-filenames "^\\.\\.?$\\|^#|*~$")
+ '(enh-ruby-deep-indent-paren nil)
  '(js-expr-indent-offset -2)
  '(package-selected-packages
    (quote
-    (js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist))))
+    (enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
+ '(ruby-deep-arglist nil)
+ '(ruby-deep-indent-paren nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -125,10 +125,9 @@
 (set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn"))
 (set 'ag-ignore-list '("tmp" "build" "vendor" "public" "dist" ".git" ".svn" "*.log"))
 
-(add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\Gemfile\\'" . ruby-mode))
-
-(setq ruby-deep-indent-paren nil)
+(add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rake\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\Gemfile\\'" . enh-ruby-mode))
 
 ;; http://royontechnology.blogspot.com/2012/04/minor-annoyance-of-running-rails.html
 (defun rails-console ()
@@ -155,7 +154,7 @@
   (interactive)
   (ansi-color-apply-on-region (point-min) (point-max)))
 
-(define-derived-mode rails-log-mode ruby-mode "Rails log"
+(define-derived-mode rails-log-mode enh-ruby-mode "Rails log"
   "Major mode for viewing Rails log files.")
 (add-to-list 'auto-mode-alist '("\\.log\\'" . rails-log-mode))
 (add-hook 'rails-log-mode-hook 'auto-revert-tail-mode)
@@ -228,8 +227,6 @@
 
 ;;(require 'yaml-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-
-(setq ruby-deep-indent-paren nil)
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.ts$" . js2-mode))
