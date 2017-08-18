@@ -48,6 +48,7 @@
  '(package-selected-packages
    (quote
     (enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
+ '(rspec-use-spring-when-possible nil)
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil))
 
