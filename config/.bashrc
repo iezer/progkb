@@ -61,3 +61,6 @@ nvm use --delete-prefix v6.9.3 --silent
 eval "$(rbenv init -)"
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# added by travis gem
+[ -f /Users/isaac/.travis/travis.sh ] && source /Users/isaac/.travis/travis.sh
