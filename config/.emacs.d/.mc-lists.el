@@ -3,7 +3,9 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        fiplr-find-file
         kill-region
+        rspec-verify-single
         save-some-buffers
         string-inflection-camelcase
         string-inflection-underscore
@@ -12,5 +14,6 @@
 
 (setq mc/cmds-to-run-once
       '(
+        electric-pair-delete-pair
         keyboard-escape-quit
         ))

@@ -47,7 +47,7 @@
  '(js-expr-indent-offset -2)
  '(package-selected-packages
    (quote
-    (enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
+    (xclip enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
  '(rspec-use-spring-when-possible nil)
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil))
@@ -321,3 +321,5 @@
 (global-set-key (kbd "C-c d") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
+
+(xclip-mode 1)
