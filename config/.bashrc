@@ -40,6 +40,8 @@ alias etsf='ember test --serve --filter'
 alias eg='ember g'
 alias egp='ember g -p'
 alias em='emacs'
+alias fs='foreman start'
+alias fr='foreman run'
 alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
 alias gr='git rebase -i'
 alias grm='git rebase -i origin/master'
@@ -64,3 +66,5 @@ export PATH="$HOME/.yarn/bin:$PATH"
 
 # added by travis gem
 [ -f /Users/isaac/.travis/travis.sh ] && source /Users/isaac/.travis/travis.sh
+
+eval "$(pyenv init -)"
