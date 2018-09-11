@@ -1,0 +1,2 @@
+;;; -*- no-byte-compile: t -*-
+(define-package "add-node-modules-path" "1.2.0" "Add node_modules to your exec-path" 'nil :commit "6f7801b2c41e3711406b7e1654257ad5557f5bb3" :keywords '("javascript" "node" "node_modules" "eslint") :authors '(("Neri Marschik" . "marschik_neri@cyberagent.co.jp")) :maintainer '("Neri Marschik" . "marschik_neri@cyberagent.co.jp") :url "https://github.com/codesuki/add-node-modules-path")

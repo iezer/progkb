@@ -68,3 +68,9 @@ export PATH="$HOME/.yarn/bin:$PATH"
 [ -f /Users/isaac/.travis/travis.sh ] && source /Users/isaac/.travis/travis.sh
 
 eval "$(pyenv init -)"
+
+# added by Anaconda3 5.2.0 installer
+export PATH="/anaconda3/bin:$PATH"
+
+# added by Miniconda3 installer
+export PATH="/Users/isaacezer/Code/miniconda3/bin:$PATH"

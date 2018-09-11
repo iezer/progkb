@@ -37,6 +37,8 @@
 (setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn"))
 			    (files ("*.jpg" "*.png" "*.log" "*.zip" "*~" "#*#" ".gitkeep"))))
 
+(setq fiplr-root-markers '(".git" ".svn" ".emacs.fiplr"))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -47,7 +49,7 @@
  '(js-expr-indent-offset -2)
  '(package-selected-packages
    (quote
-    (xclip enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
+    (add-node-modules-path prettier-js ember-mode xclip enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
  '(rspec-use-spring-when-possible nil)
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil))
@@ -324,3 +326,12 @@
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
 
 (xclip-mode 1)
+
+(add-hook 'js-mode-hook (lambda () (ember-mode t)))
+(add-hook 'web-mode-hook (lambda () (ember-mode t)))
+
+
+(eval-after-load 'js2-mode
+  '(progn
+     (add-hook 'js2-mode-hook #'add-node-modules-path)
+     (add-hook 'js2-mode-hook #'prettier-js-mode)))
