@@ -3,6 +3,6 @@
 # key: test
 # binding: direct-keybinding
 # --
-test('$1', function(assert) {
+test('$1', async function(assert) {
   $2
 });

@@ -126,7 +126,7 @@
 (setq wgrep-enable-key "r")
 
 (set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn"))
-(set 'ag-ignore-list '("tmp" "build" "vendor" "public" "dist" ".git" ".svn" "*.log"))
+(set 'ag-ignore-list '("tmp" "build" "vendor" "public" "dist" ".git" ".svn" "*.log" "node_modules"))
 
 (add-to-list 'auto-mode-alist '("\\.rb\\'" . rspec-mode))
 (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))

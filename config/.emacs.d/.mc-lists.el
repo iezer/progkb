@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        beginning-of-buffer
         fiplr-find-file
         kill-region
         rspec-verify-single
@@ -14,6 +15,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+        ag-project
         electric-pair-delete-pair
         keyboard-escape-quit
         ))

@@ -350,15 +350,6 @@ Sources are specified in ember by a few orthogonal factors:
                                             :base-type base-type
                                             :target-kind target-kind))))))
 
-(defun ember--current-project-root ()
-  "Returns the root folder of the current ember project."
-  ;; for the current implementation this basically walks up the tree until
-  ;; it sees an app folder and assumes the folder containing the app folder
-  ;; is the root of the ember project.
-  (ember--file-project-root (or load-file-name buffer-file-name default-directory)))
-
-(defun ember--file-project-root (file)
-  (locate-dominating-file file "app"))
 
 (defun ember--relative-file-components (file)
   "Returns a list containing the components which make up this ember source
