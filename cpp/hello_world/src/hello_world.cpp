@@ -2,6 +2,7 @@
 #include "LinkedList.cpp"
 #include "MinHeap.cpp"
 #include "ArraySort.cpp"
+#include "AVLTree.cpp"
 
 using namespace std;
 
@@ -63,7 +64,24 @@ void testMergesort() {
   ArraySort::print(a, length);
 }
 
+void testAVL() {
+  AVLTree* tree = new AVLTree();
+
+
+  int a[]= {10, 2, 20, 5, 25, 11};
+  size_t length = sizeof(a) / sizeof(*a);
+  for (size_t i = 0; i < length; i++) {
+    tree->insert(a[i]);
+  }
+
+  cout << "preorder: ";
+  tree->preOrderPrint();
+  cout << endl << "in order: ";
+  tree->inOrderPrint();
+  cout << endl;
+}
+
 int main() {
-  testMergesort();
+  testAVL();
   return 0;
 }
