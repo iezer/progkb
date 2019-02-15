@@ -67,18 +67,28 @@ void testMergesort() {
 void testAVL() {
   AVLTree* tree = new AVLTree();
 
-
-  int a[]= {10, 2, 20, 5, 25, 11};
+  int a[]= {10, 2, 20, 5, 25, 15, 12, 18, 16 };
   size_t length = sizeof(a) / sizeof(*a);
   for (size_t i = 0; i < length; i++) {
+    cout << " insert " << i << " " << a[i] << endl;
     tree->insert(a[i]);
   }
 
   cout << "preorder: ";
   tree->preOrderPrint();
-  cout << endl << "in order: ";
-  tree->inOrderPrint();
+  // cout << endl << "in order: ";
+  // tree->inOrderPrint();
   cout << endl;
+
+  //tree->root->right = tree->rightRotation(tree->root->right);
+
+  cout << "preorder: ";
+  tree->preOrderPrint();
+  // cout << endl << "in order: ";
+  // tree->inOrderPrint();
+  cout << endl;
+
+  delete tree;
 }
 
 int main() {
