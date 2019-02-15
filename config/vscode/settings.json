@@ -1,0 +1,42 @@
+{
+  // Place your settings in this file to overwrite the default settings
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/tmp": true,
+    "**/dist": true
+  },
+  "git.enableSmartCommit": true,
+  "editor.minimap.enabled": false,
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.historyExplorer.enabled": true,
+  "window.title": "${dirty} ${rootName} ${activeEditorMedium}",
+  "editor.tabSize": 2,
+  "npm.enableScriptExplorer": true,
+  "files.useExperimentalFileWatcher": true,
+  "editor.detectIndentation": false,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "window.zoomLevel": 0,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  },
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": false,
+  "python.pythonPath": "/anaconda3/bin/python",
+  "files.autoSave": "afterDelay",
+  "breadcrumbs.enabled": true,
+  "editor.autoClosingBrackets": "beforeWhitespace",
+  "editor.autoClosingQuotes": "beforeWhitespace",
+  "terminal.integrated.shellArgs.osx": ["-l"],
+
+  "javascript.format.enable": false,
+  // Use 'prettier-eslint' instead of 'prettier'. Other settings will only be fallbacks in case they could not be inferred from eslint rules.
+  "prettier.eslintIntegration": true
+}

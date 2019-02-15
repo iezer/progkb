@@ -10,6 +10,7 @@
         save-some-buffers
         string-inflection-camelcase
         string-inflection-underscore
+        xterm-paste
         yas-expand
         ))
 

@@ -59,7 +59,7 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 export NVM_DIR="/$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm use --delete-prefix v6.9.3 --silent
+nvm use --delete-prefix v8.12.0
 eval "$(rbenv init -)"
 
 export PATH="$HOME/.yarn/bin:$PATH"

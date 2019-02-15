@@ -34,7 +34,7 @@
 
 (global-set-key (kbd "M-n") 'fiplr-find-file)
 
-(setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn"))
+(setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn" "website"))
 			    (files ("*.jpg" "*.png" "*.log" "*.zip" "*~" "#*#" ".gitkeep"))))
 
 (setq fiplr-root-markers '(".git" ".svn" ".emacs.fiplr"))
@@ -125,8 +125,8 @@
 (setq wgrep-auto-save-buffer t)
 (setq wgrep-enable-key "r")
 
-(set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn"))
-(set 'ag-ignore-list '("tmp" "build" "vendor" "public" "dist" ".git" ".svn" "*.log" "node_modules"))
+(set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn" "website"))
+(set 'ag-ignore-list '("tmp" "build" "vendor" "public" "dist" ".git" ".svn" "*.log" "node_modules" "website"))
 
 (add-to-list 'auto-mode-alist '("\\.rb\\'" . rspec-mode))
 (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
