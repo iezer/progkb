@@ -3,6 +3,7 @@
 #include "MinHeap.cpp"
 #include "ArraySort.cpp"
 #include "AVLTree.cpp"
+#include "Graph.cpp"
 
 using namespace std;
 
@@ -91,7 +92,43 @@ void testAVL() {
   delete tree;
 }
 
+void testShortestPath() {
+  Graph* graph = new Graph(5);
+  graph->setEdge(0, 1, 10);
+  graph->setEdge(0, 4, 3);
+  graph->setEdge(1, 2, 2);
+  graph->setEdge(1, 4, 4);
+  graph->setEdge(2, 3, 9);
+  graph->setEdge(3, 2, 7);
+  graph->setEdge(4, 1, 1);
+  graph->setEdge(4, 2, 8);
+  graph->setEdge(4, 3, 2);
+
+  graph->shortestPath(0, 2);
+}
+
+void testMST() {
+  Graph* graph = new Graph(5, true);
+
+  //                   {0, 2, 0, 6, 0},
+  //                   {2, 0, 3, 8, 5},
+  //                   {0, 3, 0, 0, 7},
+  //                   {6, 8, 0, 0, 9},
+  //                   {0, 5, 7, 9, 0}};
+
+
+  graph->setEdge(0, 1, 2);
+  graph->setEdge(0, 3, 6);
+  graph->setEdge(1, 2, 3);
+  graph->setEdge(1, 3, 8);
+  graph->setEdge(1, 4, 5);
+  graph->setEdge(2, 4, 7);
+  graph->setEdge(3, 4, 9);
+
+  graph->minimumSpanningTree();
+}
+
 int main() {
-  testAVL();
+  testMST();
   return 0;
 }
