@@ -17,6 +17,7 @@
 (setq mc/cmds-to-run-once
       '(
         ag-project
+        c-electric-paren
         electric-pair-delete-pair
         keyboard-escape-quit
         ))
