@@ -111,6 +111,8 @@ public:
     int* parents = new int[size];
     bool* seen = new bool[size];
     int* weights = new int[size];
+    MinHeap* q = new MinHeap();
+
     for (size_t i = 0; i < size; i ++) {
       parents[i] = 0;
       weights[i] = MAX_INT;
@@ -119,18 +121,9 @@ public:
 
     weights[0] = 0;
     parents[0] = -1;
-
-    for (size_t count = 0 ; count < size; count++) {
-      // find minimum
-      int minIndex = -1;
-      int minWeight = MAX_INT;
-
-      for (size_t i = 0; i < size; i++) {
-        if (weights[i] < minWeight && !seen[i]) {
-          minIndex = i;
-          minWeight = weights[i];
-        }
-      }
+    q->insert(0, 0);
+    for (size_t count = 1 ; count < size; count++) {
+      int minIndex = q->extractMin();
 
       seen[minIndex] = true;
 
@@ -142,6 +135,7 @@ public:
 
         if (edgeCost < weights[i]) {
           weights[i] = edgeCost;
+          q->insertOrDecrease(i, edgeCost);
           parents[i] = minIndex;
         }
       }
@@ -152,6 +146,8 @@ public:
     }
 
     delete[] weights;
+    delete[] seen;
+    delete q;
     return parents;
   }
 };
