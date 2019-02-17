@@ -150,4 +150,44 @@ public:
     delete q;
     return parents;
   }
+
+  bool hamiltonianCycle(int* path, bool* seen, size_t current) {
+    if (current == size) {
+      int start = path[0];
+      int finish = path[size - 1];
+      bool isConnected = getEdge(start, finish) > 0;
+      return isConnected;
+    }
+
+    for (size_t i = 1; i < size; i++) {
+      if (getEdge(current, i) == 0 || seen[i]) {
+        continue;
+      }
+
+      seen[i] = true;
+      path[current] = i;
+
+      if (hamiltonianCycle(path, seen, current + 1)) {
+        return true;
+      }
+
+      seen[i] = false;
+      path[current] = -1;
+    }
+
+    return false;
+  }
+
+  bool hamiltonianCycle() {
+    int* path = new int(size);
+    bool* seen = new bool(size);
+    for (size_t i = 1; i < size; i++) {
+      path[i] = -1;
+      seen[i] = false;
+    }
+
+    path[0] = 0;
+    seen[0] = true;
+    return hamiltonianCycle(path, seen, 1);
+  }
 };

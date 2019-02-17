@@ -22,6 +22,9 @@ void testList() {
 
   a->concat(*b);
   a->print();
+
+  delete a;
+  delete b;
 }
 
 void testHeap() {
@@ -46,6 +49,8 @@ void testHeap() {
   cout << "min: " << q->extractMin() << ", capacity " << q->capacity << ", size " << q->size << endl;
   cout << "min: " << q->extractMin() << ", capacity " << q->capacity << ", size " << q->size << endl;
   cout << "min: " << q->extractMin() << ", capacity " << q->capacity << ", size " << q->size << endl;
+
+  delete q;
 }
 
 void testQuicksort() {
@@ -105,6 +110,7 @@ void testShortestPath() {
   graph->setEdge(4, 3, 2);
 
   graph->shortestPath(0, 2);
+  delete graph;
 }
 
 void testMST() {
@@ -126,9 +132,35 @@ void testMST() {
   graph->setEdge(3, 4, 9);
 
   graph->minimumSpanningTree();
+  delete graph;
+}
+
+void testHamiltonian() {
+  Graph* graph = new Graph(5, true);
+  graph->setEdge(0, 1, 1);
+  graph->setEdge(0, 3, 1);
+  graph->setEdge(1, 2, 1);
+  graph->setEdge(1, 3, 1);
+  graph->setEdge(1, 4, 1);
+  graph->setEdge(2, 4, 1);
+  graph->setEdge(3, 4, 1);
+
+  cout << "good has cycle? " << graph->hamiltonianCycle() << endl;
+  delete graph;
+
+  Graph* badGraph = new Graph(5, true);
+  badGraph->setEdge(0, 1, 1);
+  badGraph->setEdge(0, 3, 1);
+  badGraph->setEdge(1, 2, 1);
+  badGraph->setEdge(1, 3, 1);
+  badGraph->setEdge(1, 4, 1);
+  badGraph->setEdge(2, 4, 1);
+
+  cout << "bad has cycle? " << badGraph->hamiltonianCycle() << endl;
+  delete badGraph;
 }
 
 int main() {
-  testMST();
+  testHamiltonian();
   return 0;
 }
