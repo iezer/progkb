@@ -140,9 +140,7 @@ public:
           continue;
         }
 
-        int newWeight = minWeight + edgeCost;
-
-        if (newWeight < weights[i]) {
+        if (edgeCost < weights[i]) {
           weights[i] = edgeCost;
           parents[i] = minIndex;
         }
