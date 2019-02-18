@@ -3,6 +3,7 @@
 #include "MinHeap.cpp"
 #include "ArraySort.cpp"
 #include "AVLTree.cpp"
+#include "KnightsTour.cpp"
 #include "Graph.cpp"
 
 using namespace std;
@@ -161,6 +162,8 @@ void testHamiltonian() {
 }
 
 int main() {
-  testHamiltonian();
+  int* path = KnightsTour::knightsTour();
+  delete[] path;
+
   return 0;
 }
