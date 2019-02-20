@@ -1,55 +1,80 @@
-//jshint esnext:true
-// Primms Algo MST
+// primms with generator
+//jshint esnext: true
+
+console.log('start');
 const MAX_INT = Number.MAX_SAFE_INTEGER;
 
-const graph = [ 
-  [0, 2, 0, 6, 0], 
-            [2, 0, 3, 8, 5], 
-            [0, 3, 0, 0, 7], 
-            [6, 8, 0, 0, 9], 
-            [0, 5, 7, 9, 0]];
-
-const nodes = 5;
-
-let parents = new Array(nodes);
-let weights = new Array(nodes).fill(MAX_INT);
-let seen = new Array(nodes);
-
-weights[0] = 0;
-let currentWeight = 0;
-let currentIndex = 0;
-let parentIndex = -1;
-parents[0] = -1;
-
-for(let count = 0; count < nodes; count++) {
-  console.log(`current ${currentIndex} ${currentWeight} ${parents} ${weights} ${seen}`);
-  
-   // find min unseen
-  let minWeight = MAX_INT;
-  let minIndex = -1;
-  for (let m = 0; m < nodes; m++) {
-    if (weights[m] < minWeight && !seen[m]) {
-      minIndex = m;
-      minWeight = weights[m];
-    }
+class Graph {
+  constructor(size, isUndirected = false) {
+    this.size = size;
+    this.isUndirected = isUndirected;
+    this.graph = new Array(size * size).fill(0);
   }
   
-  seen[minIndex] = true;
+  getEdge(i, j) {
+    return this.graph[i * this.size + j];
+  }
   
-  // Update weights for neighbours
-  for(let j = 0; j < nodes; j++) {
-    if (!seen[j] && graph[minIndex][j] > 0 && currentWeight + graph[minIndex][j] < weights[j]) {
-      weights[j] = graph[minIndex][j];
-      parents[j] = minIndex;
+  setEdge(i, j, c) {
+    this.graph[i * this.size + j] = c;
+    if (this.isUndirected) {
+      this.graph[j * this.size + i] = c;
     }
   }
 }
 
-console.debug(parents);
-console.debug(weights);
-/* expected answer
-1 - 0 (2)
-2 - 1 (3)
-3 - 0 (6)
-4 - 1 (5)
-*/
+let g = new Graph(5, true);
+
+[
+  [0, 1, 2],
+  [0, 3, 6],
+  [1, 2, 3],
+  [1, 3, 8],
+  [1, 4, 5],
+  [2, 4, 7],
+  [3, 4, 9]
+].forEach(([i,j,c]) => g.setEdge(i, j, c));
+
+function mst(g) {
+  const { size } = g;
+  let seen = new Array(size).fill(false);
+  let weights = new Array(size).fill(MAX_INT);
+  let previous = new Array(size).fill(-1);
+
+  weights[0] = 0;
+  
+  for (let count = 0; count < size - 1; count++) {
+    let current = -1;
+    let minValue = MAX_INT;
+    for (let j = 0; j < size; j++) {
+      if (!seen[j] && weights[j] < minValue) {
+        current = j; minValue = weights[j];
+      }
+    }
+
+    seen[current] = true;
+
+    for (let j = 0; j < size; j++) {
+      const cost = g.getEdge(current, j);
+      if (cost > 0 && cost < weights[j] && !seen[j]) {
+        weights[j] = cost;
+        previous[j] = current;
+      }
+    }
+  }
+  return { weights, previous };
+}
+
+function preorder(current, previous, route = []) {
+    route.push(current);
+    for (let finish = 0; finish < previous.length; finish++) {
+      let start = previous[finish];
+      if (start !== current || route.includes(finish)) { continue; }
+      preorder(finish, previous, route);
+    }
+    return route;
+}
+
+let { weights, previous } = mst(g);
+let route = preorder(0, previous);
+console.log("traveling salesman route: " + route); // expected [0,1,2,4,3]

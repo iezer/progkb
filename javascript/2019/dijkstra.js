@@ -1,4 +1,7 @@
 // dijkstra with generator
+// on jsbin, Need polyfill in HTML file. Copy this:
+//   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.25/browser-polyfill.min.js"></script>
+
 const MAX_INT = Number.MAX_SAFE_INTEGER;
 class Graph {
   constructor(size, isUndirected = false) {
