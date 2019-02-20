@@ -2,34 +2,18 @@
 #include <iostream>
 #include <stdexcept>
 #include <vector>
+#include "MinHeap.cpp"
 
 using namespace std;
 
 #pragma once
 
-// TODO should be a template
-class HeapNode {
-public:
-  int priority;
-  int value;
-
-  HeapNode() {
-    priority = -1;
-    value = 0;
-  }
-
-  HeapNode(int p, int v) {
-    priority = p;
-    value = v;
-  }
-};
-
-class MinHeap {
+class MinHeapVector {
 public:
   vector<HeapNode> heap;
   vector<int> positions;
 
-  MinHeap(int capacity = 4, int maxValue = 20) {
+  MinHeapVector(int maxValue = 20) {
     heap = vector<HeapNode>(0);
     positions = vector<int>(maxValue + 1);
 
@@ -64,17 +48,18 @@ public:
     }
   }
 
-  size_t size() {
+  size_t getSize() {
     return heap.size();
   }
 
-  int capacity() {
+  int getCapacity() {
     return heap.capacity();
   }
 
   void insert(int value, int priority) {
-    size_t i = heap.size();
+    size_t i = getSize();
     heap.push_back(HeapNode(value, priority));
+
     positions[value] = i;
     bubbleUp(i);
   }
@@ -111,7 +96,7 @@ public:
     unsigned int left = this->left(i);
     unsigned int right = this->right(i);
     unsigned int smallest = i;
-    size_t size = this->size();
+    size_t size = getSize();
 
     if (left < size && heap[left].priority < heap[smallest].priority) {
       smallest = left;
@@ -134,7 +119,7 @@ public:
     }
 
     int min = heap[0].value;
-    size_t size = this->size();
+    size_t size = getSize();
 
     heap[0] = heap[size - 1];
     heap.pop_back();
@@ -160,8 +145,8 @@ public:
   }
 
   void print() {
-    int size = this->size();
-    cout << "size: " << size << ", capacity: " << heap.capacity() << "; ";
+    int size = getSize();
+    cout << "size: " << size << ", capacity: " << getCapacity() << "; ";
     for (size_t i = 0; i < size; i++) {
       cout << heap[i].value << (i < size -1 ? ", " : "");
     }

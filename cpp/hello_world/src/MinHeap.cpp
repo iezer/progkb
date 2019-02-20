@@ -45,6 +45,14 @@ public:
     delete[] positions;
   }
 
+  size_t getSize() {
+    return size;
+  }
+
+  int getCapacity() {
+    return capacity;
+  }
+
   int parent(int i) {
     return (i - 1) / 2;
   }

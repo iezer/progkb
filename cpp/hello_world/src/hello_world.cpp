@@ -1,6 +1,7 @@
 #include <iostream>
 #include "LinkedList.cpp"
 #include "MinHeap.cpp"
+#include "MinHeapVector.cpp"
 #include "ArraySort.cpp"
 #include "AVLTree.cpp"
 #include "KnightsTour.cpp"
@@ -29,7 +30,7 @@ void testList() {
 }
 
 void testHeap() {
-  MinHeap* q = new MinHeap();
+  MinHeapVector* q = new MinHeapVector();
   try {
     q->getMin();
   } catch(const std::exception& e) {
@@ -44,12 +45,12 @@ void testHeap() {
   q->insert(4);
   q->print();
 
-  cout << "min: " << q->extractMin() << ", capacity " << q->capacity << ", size " << q->size << endl;
+  cout << "min: " << q->extractMin() << ", capacity " << q->getCapacity() << ", size " << q->getSize() << endl;
   q->print();
-  cout << "min: " << q->extractMin() << ", capacity " << q->capacity << ", size " << q->size << endl;
-  cout << "min: " << q->extractMin() << ", capacity " << q->capacity << ", size " << q->size << endl;
-  cout << "min: " << q->extractMin() << ", capacity " << q->capacity << ", size " << q->size << endl;
-  cout << "min: " << q->extractMin() << ", capacity " << q->capacity << ", size " << q->size << endl;
+  cout << "min: " << q->extractMin() << ", capacity " << q->getCapacity() << ", size " << q->getSize() << endl;
+  cout << "min: " << q->extractMin() << ", capacity " << q->getCapacity() << ", size " << q->getSize() << endl;
+  cout << "min: " << q->extractMin() << ", capacity " << q->getCapacity() << ", size " << q->getSize() << endl;
+  cout << "min: " << q->extractMin() << ", capacity " << q->getCapacity() << ", size " << q->getSize() << endl;
 
   delete q;
 }
@@ -163,8 +164,9 @@ void testHamiltonian() {
 }
 
 int main() {
-  int* path = KnightsTour::knightsTour();
-  delete[] path;
+  testHeap();
+  // int* path = KnightsTour::knightsTour();
+  // delete[] path;
 
   return 0;
 }
