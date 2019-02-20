@@ -88,6 +88,7 @@ void testAVL() {
   cout << endl;
 
   //tree->root->right = tree->rightRotation(tree->root->right);
+  tree->deleteNode(10);
 
   cout << "preorder: ";
   tree->preOrderPrint();

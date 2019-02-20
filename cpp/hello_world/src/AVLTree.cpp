@@ -66,23 +66,34 @@ public:
                            height(node->right));
   }
 
-  TreeNode* insert(TreeNode* node, int key) {
-    if (node == NULL) {
-      return new TreeNode(key);
-    }
+  TreeNode* rightRotation(TreeNode* node) {
+    cout << "rightRotation ";
+    TreeNode* newRoot = node->left;
+    TreeNode* child = newRoot->right;
 
-    if (key < node->key) {
-      node->left = insert(node->left, key);
-    } else if (key > node->key) {
-      node->right = insert(node->right, key);
-    } else {
-      // Cannot have duplicates
-      return node;
-    }
+    newRoot->right = node;
+    node->left = child;
 
-    /* 2. Update height of this ancestor node */
     updateHeight(node);
+    updateHeight(newRoot);
 
+    return newRoot;
+  }
+
+  TreeNode* leftRotation(TreeNode* node) {
+    cout << "leftRotation " << node->key << endl;
+    TreeNode* newRoot = node->right;
+    TreeNode* child = newRoot->left;
+    newRoot->left = node;
+    node->right = child;
+
+    updateHeight(node);
+    updateHeight(newRoot);
+
+    return newRoot;
+  }
+
+  TreeNode* rebalance(TreeNode* node, int key) {
     int balance = getBalance(node);
 
     // 4 cases
@@ -115,6 +126,63 @@ public:
     }
 
     return node;
+  }
+
+  TreeNode* insert(TreeNode* node, int key) {
+    if (node == NULL) {
+      return new TreeNode(key);
+    }
+
+    if (key < node->key) {
+      node->left = insert(node->left, key);
+    } else if (key > node->key) {
+      node->right = insert(node->right, key);
+    } else {
+      // Cannot have duplicates
+      return node;
+    }
+
+    /* 2. Update height of this ancestor node */
+    updateHeight(node);
+    return rebalance(node, key);
+  }
+
+  TreeNode* successor(TreeNode* root) {
+    if (root == NULL) { return NULL; }
+    root = root->right;
+    while (root->left != NULL) {
+      root = root->left;
+    }
+    return root;
+  }
+
+  TreeNode* deleteNode(TreeNode* root, int key) {
+    if (root == NULL) { return NULL; }
+    if (key < root->key) {
+      root->left = deleteNode(root->left, key);
+    } else if (key > root->key) {
+      root->right = deleteNode(root->right, key);
+    } else {
+      if (root->left == NULL && root->right == NULL) {
+        delete root;
+        return NULL;
+      } else if(root->left == NULL || root->right == NULL) {
+        TreeNode* child = root->right == NULL ? root->left : root->right;
+        delete root;
+        return child;
+      } else {
+        TreeNode* next = successor(root);
+        root->key = next->key;
+        root->right = deleteNode(root->right, next->key);
+      }
+    }
+
+    updateHeight(root);
+    return rebalance(root, key);
+  }
+
+  TreeNode* deleteNode(int key) {
+    return deleteNode(root, key);
   }
 
   void preOrderPrint() {
@@ -161,32 +229,5 @@ public:
     inOrderPrint(node->left);
     printNode(node);
     inOrderPrint(node->right);
-  }
-
-  TreeNode* rightRotation(TreeNode* node) {
-    cout << "rightRotation ";
-    TreeNode* newRoot = node->left;
-    TreeNode* child = newRoot->right;
-
-    newRoot->right = node;
-    node->left = child;
-
-    updateHeight(node);
-    updateHeight(newRoot);
-
-    return newRoot;
-  }
-
-  TreeNode* leftRotation(TreeNode* node) {
-    cout << "leftRotation " << node->key << endl;
-    TreeNode* newRoot = node->right;
-    TreeNode* child = newRoot->left;
-    newRoot->left = node;
-    node->right = child;
-
-    updateHeight(node);
-    updateHeight(newRoot);
-
-    return newRoot;
   }
 };
