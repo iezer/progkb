@@ -9,39 +9,45 @@ function twoDimArray(x, y, initVal = 0) {
 }
 
 function knapsackDynamic(values, weights, W) {
-  let memo = twoDimArray(values.length, W);
+  let memo = new Array(2);
+  for (let i = 0; i< memo.length; i++) {
+    memo[i] = new Array(W + 1).fill(0);
+  }
 
   for (let w = weights[0]; w <= W; w++) {
     memo[0][w] = values[0];
   }
   
   for (let i = 1; i < values.length; i++) {
+    let current = i % 2;
+    let previous = (i - 1) % 2;
+    
     for (let w = 0; w <= W; w++) {
       if (weights[i] > w) {
-        memo[i][w] = memo[i-1][w];
+        memo[current][w] = memo[previous][w];
         continue;
       }
       
-      memo[i][w] = Math.max.apply(null, [
-        values[i] + memo[i-1][w - weights[i]],
-        memo[i-1][w]
+      memo[current][w] = Math.max.apply(null, [
+        values[i] + memo[previous][w - weights[i]],
+        memo[previous][w]
       ]);
     }
   }
   
-  let maxValue = memo[values.length - 1][W];
-
+  let lastRow = W % 2;
+  let maxValue = memo[lastRow][W];
   let selectedNodes = [];
   for (let i = values.length - 1; i >= 0; i--) {
     let isUsed = i === 0 ? 
-        memo[i][W] > 0 : 
-        memo[i][W] !== memo[i-1][W];
-  if (isUsed) {
-    selectedNodes.push(i);
-    W = W - weights[i];
+        memo[lastRow][W] > 0 : 
+        memo[lastRow][W] !== memo[i-1][W];
+    if (isUsed) {
+      selectedNodes.push(i);
+      W = W - weights[i];
+    }
   }
-}
-  
+
   return { maxValue: maxValue, selectedNodes: selectedNodes };
 }
 
