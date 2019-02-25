@@ -28,7 +28,7 @@ function mergeSort(left, right) {
   middle.next = null;
   
   let a = mergeSort(left, middle);
-  let b = mergeSort(rightStart, right)
+  let b = mergeSort(rightStart, right);
   return merge(a, b);
 }
 
