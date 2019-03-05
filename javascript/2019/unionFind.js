@@ -46,9 +46,7 @@ class Graph {
       return p;
     };
     
-    let union = (i, j) => {
-      let x = getParent(i);
-      let y = getParent(j);
+    let union = (x, y) => {
       if (rank[x] < rank[y]) {
         parents[x] = y;
       } else if (rank[y] < rank[x]) {
