@@ -48,7 +48,7 @@ class AVLTree {
     node.left = oldChild;
     newRoot.right = node;
     node.updateHeight();
-    newRoot.updateHeight()
+    newRoot.updateHeight();
     return newRoot;
   }
   leftRotation(node) {
@@ -57,7 +57,7 @@ class AVLTree {
     node.right = oldChild;
     newRoot.left = node;
     node.updateHeight();
-    newRoot.updateHeight()
+    newRoot.updateHeight();
     return newRoot;
   }
   balance(root, value) {

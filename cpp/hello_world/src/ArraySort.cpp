@@ -25,7 +25,10 @@ public:
     int p = (left + right) / 2;
     int value = array[p];
 
-    while(left < right) {
+// 10
+// 1, 2, 15, 16, 10, 4, 5, 10, 20, 3
+// 1, 2, 3, 10, 5, 4, 10, 16, 20, 15
+    while(left <= right) {
       while (array[left] < value) {
         left++;
       }
