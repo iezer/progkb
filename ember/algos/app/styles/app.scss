@@ -1,5 +1,12 @@
 @import 'switch.scss';
 
+.bubble-capture {
+  div {
+    margin: 10px;
+    border: 1px solid blue;
+  }
+}
+
 .scroll-to {
   .scroll-content {
     height: 500px;
@@ -67,6 +74,4 @@
     border: 1px solid blue;
     background-color: blue;
   }
-
-
 }
