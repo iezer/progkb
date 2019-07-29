@@ -342,6 +342,8 @@
      ;; (add-hook 'js2-mode-hook #'prettier-js-mode)
      ))
 
+;; START ember-template-lint config
+;; from https://gist.github.com/bistin/f964de48fd16a42b8bfd7d0bde82be6c via @rwjblue
 (defun flycheck-parse-ember-template-lint (output checker buffer)
   "Parse Ember-template-lint errors/warnings from JSON OUTPUT.
 CHECKER and BUFFER denote the CHECKER that returned OUTPUT and
@@ -382,3 +384,4 @@ the BUFFER that was checked respectively.
           (lambda ()
             (when (string-equal "hbs" (file-name-extension buffer-file-name))
               (setup-web-mode))))
+;; END ember-template-lint config
