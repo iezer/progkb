@@ -1,3 +1,9 @@
+M-w - kill-ring-save basically copy
+C-k - kill, basically cut
+C-y - yank, basically paste
+DEL - delete without yanking
+After C-y, can do M-y to cycle through previous yanks.
+
 Rectangles
 C-x r c - clear region replace with spaces
 C-x r k kill region rect
@@ -16,7 +22,22 @@ upcase - M-u (region C-x C-u)
 lowercase - M-l (region C-x C-l)
 capitalize - M-c
 
+Dired mode
 C-x d dired mode,
+ o - open in another window (can be a dir or file)
+ i - write directory contains in same file
+ ^ - go up a directory (like ..)
+ + - create directory
+ ( - toggle file details from `ls`
+ q - exit
+ n,p - next previous
+ <,> - navigate between directory lines only
+ j - goto file
+ $ - toggle directory block (useful when pressing i) M-$ hides all
+ m - mark
+ k - remove from buffer (line not file)
+ s - sort, alternate by alpha and date/time
+
 flycheck
 C-c ! l - see full list of errors in a buffer. Details
 C-c ! n - next error

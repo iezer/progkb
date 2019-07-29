@@ -51,6 +51,8 @@
    (quote
     (add-node-modules-path prettier-js ember-mode xclip enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
  '(rspec-use-spring-when-possible nil)
+ '(rspec-use-docker-when-possible t)
+ '(rspec-docker-container "console")
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil))
 
@@ -260,6 +262,9 @@
 (add-hook 'dired-mode-hook
 	  (lambda () (dired-omit-mode 1)))
 
+;; Move files between split panes
+(setq dired-dwim-target t)
+
 ;; (add-to-list
 ;;  'comint-preoutput-filter-functions
 ;;  (lambda (output)
@@ -334,4 +339,46 @@
 (eval-after-load 'js2-mode
   '(progn
      (add-hook 'js2-mode-hook #'add-node-modules-path)
-     (add-hook 'js2-mode-hook #'prettier-js-mode)))
+     ;; (add-hook 'js2-mode-hook #'prettier-js-mode)
+     ))
+
+(defun flycheck-parse-ember-template-lint (output checker buffer)
+  "Parse Ember-template-lint errors/warnings from JSON OUTPUT.
+CHECKER and BUFFER denote the CHECKER that returned OUTPUT and
+the BUFFER that was checked respectively.
+"
+  (mapcar (lambda (err)
+            (let-alist err
+              (flycheck-error-new-at
+               .line
+               .column
+               (pcase .severity
+                 (2 'error)
+                 (1 'warning)
+                 (_ 'warning))
+               .message
+               :id .rule
+               :checker checker
+               :buffer buffer
+               :filename (buffer-file-name buffer))))
+          (cdaar (flycheck-parse-json output))))
+
+(eval-after-load 'flycheck
+            (flycheck-define-checker ember-template-lint
+              "ember-template-lint"
+              :command ("ember-template-lint" source "--json")
+              :standard-input t
+              :error-parser flycheck-parse-ember-template-lint
+              :modes (web-mode)
+              :working-directory flycheck-eslint--find-working-directory)
+            )
+
+(defun setup-web-mode ()
+  (flycheck-select-checker 'ember-template-lint)
+  )
+;;(flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append)
+
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "hbs" (file-name-extension buffer-file-name))
+              (setup-web-mode))))

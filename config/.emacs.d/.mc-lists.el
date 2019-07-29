@@ -18,6 +18,7 @@
       '(
         ag-project
         c-electric-paren
+        c-hungry-delete-forward
         electric-pair-delete-pair
         keyboard-escape-quit
         ))
