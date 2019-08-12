@@ -49,10 +49,10 @@
  '(js-expr-indent-offset -2)
  '(package-selected-packages
    (quote
-    (add-node-modules-path prettier-js ember-mode xclip enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
- '(rspec-use-spring-when-possible nil)
- '(rspec-use-docker-when-possible t)
+    (web-mode lsp-mode add-node-modules-path prettier-js ember-mode xclip enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
  '(rspec-docker-container "console")
+ '(rspec-use-docker-when-possible t)
+ '(rspec-use-spring-when-possible nil)
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil))
 
@@ -62,7 +62,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(require 'web-mode)
+
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.handlebars\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
