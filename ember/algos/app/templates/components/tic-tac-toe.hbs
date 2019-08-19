@@ -1,0 +1,10 @@
+Tic Tac Toe Player: {{this.player}}
+<div class="tic-tac-toe">
+  {{#each this.board.board as |piece index|}}
+    <div class="piece" {{action "play" index this.player}}>
+      {{piece}}
+    </div>
+  {{/each}}
+</div>
+
+<button {{action "reset"}}>Reset</button>

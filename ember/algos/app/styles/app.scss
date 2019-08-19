@@ -75,3 +75,13 @@
     background-color: blue;
   }
 }
+
+.tic-tac-toe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 50px;
+  grid-gap: 5px;
+  .piece {
+    border: 1px solid;
+  }
+}
