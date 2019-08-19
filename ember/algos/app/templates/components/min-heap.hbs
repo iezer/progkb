@@ -1,0 +1,8 @@
+{{input value=input}}
+<button {{action "insert" this.input}}>Insert</button>
+
+{{#each this.q.q as |v|}}
+  {{v}},
+{{/each}}
+
+<button {{action "popMin"}}>Pop Min</button>
