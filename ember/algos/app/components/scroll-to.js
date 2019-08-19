@@ -4,6 +4,27 @@ import { later } from '@ember/runloop';
 // https://medium.com/@roderickhsiao/implement-smooth-scrolling-79efb20b6535
 
 export default Component.extend({
+  scrollTo(offset) {
+    let animationTime = 500;
+
+    window.scrollTo(0, offset);
+    let start;
+    function step(ts) {
+      if (!start) {
+        start = ts;
+      }
+      let progress = ts - start;
+      let scrollDistance = Math.min(offset, (progress / animationTime) * offset);
+      window.scrollTo(0, scrollDistance);
+
+      if(progress < animationTime) {
+        window.requestAnimationFrame(step);
+      }
+    }
+
+    window.requestAnimationFrame(step);
+  },
+
   actions: {
     scrollTo(target) {
       console.log(`scroll to ${target}`);
@@ -11,10 +32,11 @@ export default Component.extend({
       const el = document.getElementById(target);
       const bodyRect = body.getBoundingClientRect();
       const elRect = el.getBoundingClientRect();
-      const offset = elRect.top - bodyRect.top;
+      const margin = 10;
+      const offset = elRect.top - bodyRect.top - margin;
 
       later(() => {
-        window.scrollTo(0, offset);
+        this.scrollTo(offset);
       });
     }
   }
