@@ -8,6 +8,7 @@
    :box '(:line-width 6 :color "gray20" :style nil))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(delete-selection-mode 1)
 (prefer-coding-system 'utf-8-unix)
 (setq indent-tabs-mode nil) ; always replace tabs with spaces
 
