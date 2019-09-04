@@ -6,6 +6,7 @@
         beginning-of-buffer
         fiplr-find-file
         kill-region
+        query-replace
         rspec-verify-single
         save-some-buffers
         string-inflection-camelcase

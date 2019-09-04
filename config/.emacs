@@ -50,7 +50,7 @@
  '(js-expr-indent-offset -2)
  '(package-selected-packages
    (quote
-    (web-mode lsp-mode add-node-modules-path prettier-js ember-mode xclip enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
+    (yasnippet web-mode lsp-mode add-node-modules-path prettier-js ember-mode xclip enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
  '(rspec-docker-container "console")
  '(rspec-use-docker-when-possible t)
  '(rspec-use-spring-when-possible nil)
@@ -242,11 +242,6 @@
 ;; (add-to-list 'load-path "~/.emacs.d/ember-mode/")
 ;; (require 'ember-mode)
 
-(add-to-list 'load-path
-	     "yasnippet.el")
-(require 'yasnippet)
-(yas-global-mode 1)
-
 (electric-pair-mode t)
 ;;(setq electric-pair-inhibit-if-helps-balance nil)
 (push '(?\' . ?\') electric-pair-pairs)
@@ -386,3 +381,8 @@ the BUFFER that was checked respectively.
             (when (string-equal "hbs" (file-name-extension buffer-file-name))
               (setup-web-mode))))
 ;; END ember-template-lint config
+
+(setq yas-snippet-dirs
+      '("~/elisp/snippets"                 ;; personal snippets
+        ))
+(yas-global-mode 1)
