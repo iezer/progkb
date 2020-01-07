@@ -50,7 +50,7 @@
  '(js-expr-indent-offset -2)
  '(package-selected-packages
    (quote
-    (yasnippet web-mode lsp-mode add-node-modules-path prettier-js ember-mode xclip enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
+    (rjsx-mode yasnippet web-mode lsp-mode add-node-modules-path prettier-js ember-mode xclip enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
  '(rspec-docker-container "console")
  '(rspec-use-docker-when-possible t)
  '(rspec-use-spring-when-possible nil)
@@ -285,9 +285,14 @@
                       '(javascript-jscs)))
 
 ;; use web-mode for .jsx files
-;;(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+::(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 ;; use eslint with web-mode for jsx files
-;;(flycheck-add-mode 'javascript-eslint 'web-mode)
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+::(setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
+
+;; Most important line for jsx, might want to disable for ember projects
+;;(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 
 ;; customize flycheck temp file prefix
 (setq-default flycheck-temp-prefix ".flycheck")
@@ -386,3 +391,6 @@ the BUFFER that was checked respectively.
       '("~/elisp/snippets"                 ;; personal snippets
         ))
 (yas-global-mode 1)
+
+(with-eval-after-load 'flycheck
+  (advice-add 'flycheck-eslint-config-exists-p :override (lambda() t)))
