@@ -235,8 +235,11 @@
 ;;(require 'yaml-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
+(add-to-list 'auto-mode-alist '("\\.tsx$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.ts$" . js2-mode))
+
 (autoload 'espresso-mode "espresso")
 
 ;; (add-to-list 'load-path "~/.emacs.d/ember-mode/")
@@ -286,13 +289,18 @@
 
 ;; use web-mode for .jsx files
 ::(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+::(add-to-list 'auto-mode-alist '("\\.tsx$" . web-mode))
+
 ;; use eslint with web-mode for jsx files
 (flycheck-add-mode 'javascript-eslint 'web-mode)
 ::(setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
 
 ;; Most important line for jsx, might want to disable for ember projects
 ;;(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . rjsx-mode))
 
 ;; customize flycheck temp file prefix
 (setq-default flycheck-temp-prefix ".flycheck")
@@ -340,7 +348,7 @@
 (eval-after-load 'js2-mode
   '(progn
      (add-hook 'js2-mode-hook #'add-node-modules-path)
-     ;; (add-hook 'js2-mode-hook #'prettier-js-mode)
+     (add-hook 'js2-mode-hook #'prettier-js-mode)
      ))
 
 ;; START ember-template-lint config
