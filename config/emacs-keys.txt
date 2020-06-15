@@ -118,7 +118,6 @@ Revert Buffer Meta-X, revert-buffer
 Close Window/Buffer Ctrl-X, K
 Quit  Ctrl-X, Ctrl-C
 
-
 EDIT
 
 Undo  Ctrl-_
@@ -149,7 +148,6 @@ Page    Ctrl-V  Meta-V
 Document  Meta-<  Meta->
 C Function  Meta-Ctrl-A Meta-Control-E
 
-
 SEARCH
 
 Incremental Search    Ctrl-S
@@ -160,7 +158,6 @@ Interactive Search and Replace  Meta-%
 Goto Line Number    Meta-X goto-line
 Previous Matching Bracket Meta-Ctrl-B (or ESC Ctrl-B)
 Next Matching Bracket   Meta-Ctrl-F (or ESC Ctrl-F)
-
 
 WINDOW
 
@@ -181,7 +178,6 @@ Paste from Numbered Clipboard Ctrl-X R I [#]
 Set Numbered Bookmark Ctrl-X R SPC [#]
 Jump to Numbered Bookmark Ctrl-X R J [#]
 
-
 FORMATTING
 
 Re-flow Paragraph Meta-Q
@@ -191,7 +187,6 @@ Lowercase Word  Meta-L
 Capitalize Word Meta-C
 Uppercase Selection Ctrl-X, Ctrl-U
 Lowercase Selection Ctrl-X, Ctrl-L
-
 
 MACROS
 

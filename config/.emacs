@@ -33,10 +33,11 @@
 ;;(require 'rvm)
 ;;(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
 
+(global-set-key (kbd "M-p") 'fiplr-find-file)
 (global-set-key (kbd "M-n") 'fiplr-find-file)
 
-(setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn" "website"))
-			    (files ("*.jpg" "*.png" "*.log" "*.zip" "*~" "#*#" ".gitkeep"))))
+(setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn" "website" ".polly_recordings"))
+			    (files ("*.jpg" "*.png" "*.log" "*.zip" "*~" "#*#" ".gitkeep" "newrelic-browser.js"))))
 
 (setq fiplr-root-markers '(".git" ".svn" ".emacs.fiplr"))
 
@@ -50,7 +51,7 @@
  '(js-expr-indent-offset -2)
  '(package-selected-packages
    (quote
-    (rjsx-mode yasnippet web-mode lsp-mode add-node-modules-path prettier-js ember-mode xclip enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
+    (scala-mode lsp-scala tide rjsx-mode yasnippet web-mode lsp-mode add-node-modules-path prettier-js ember-mode xclip enh-ruby-mode rspec-mode js2-mode string-inflection wgrep-ag multiple-cursors flycheck fiplr evil cl-generic alchemist)))
  '(rspec-docker-container "console")
  '(rspec-use-docker-when-possible t)
  '(rspec-use-spring-when-possible nil)
@@ -128,8 +129,8 @@
 (setq wgrep-auto-save-buffer t)
 (setq wgrep-enable-key "r")
 
-(set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn" "website"))
-(set 'ag-ignore-list '("tmp" "build" "vendor" "public" "dist" ".git" ".svn" "*.log" "node_modules" "website"))
+(set 'grep-find-ignored-directories '("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn" "website" ".polly_recordings"))
+(set 'ag-ignore-list '("tmp" "build" "vendor" "public" "dist" ".git" ".svn" "*.log" "node_modules" "website" "newrelic-browser.js" "package-lock.json" "yarn.lock" ".polly_recordings"))
 
 (add-to-list 'auto-mode-alist '("\\.rb\\'" . rspec-mode))
 (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
@@ -235,11 +236,6 @@
 ;;(require 'yaml-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
-(add-to-list 'auto-mode-alist '("\\.tsx$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.ts$" . js2-mode))
-
 (autoload 'espresso-mode "espresso")
 
 ;; (add-to-list 'load-path "~/.emacs.d/ember-mode/")
@@ -287,20 +283,27 @@
                       '(javascript-jshint)
                       '(javascript-jscs)))
 
-;; use web-mode for .jsx files
-::(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
-::(add-to-list 'auto-mode-alist '("\\.tsx$" . web-mode))
 
-;; use eslint with web-mode for jsx files
-(flycheck-add-mode 'javascript-eslint 'web-mode)
-::(setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
+;; JS FILES
+
+;; use web-mode for .jsx files
+;; (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.tsx$" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.tsx$" . js2-mode))
+;; (add-to-list 'auto-mode-alist '("\\.jsx$" . js2-mode))
+;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;; (add-to-list 'auto-mode-alist '("\\.ts$" . js2-mode))
 
 ;; Most important line for jsx, might want to disable for ember projects
 ;;(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . rjsx-mode))
+
+;; ;; use eslint with web-mode for jsx files
+;; (flycheck-add-mode 'javascript-eslint 'web-mode)
+;; ::(setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
+
 
 ;; customize flycheck temp file prefix
 (setq-default flycheck-temp-prefix ".flycheck")
@@ -402,3 +405,7 @@ the BUFFER that was checked respectively.
 
 (with-eval-after-load 'flycheck
   (advice-add 'flycheck-eslint-config-exists-p :override (lambda() t)))
+
+(setq-default typescript-indent-level 2)
+(setq-default css-indent-offset 2)
+
