@@ -37,7 +37,7 @@
 (global-set-key (kbd "M-n") 'fiplr-find-file)
 
 (setq fiplr-ignored-globs '((directories ("tmp" "bower_components" "node_modules" "build" "vendor" "public" "dist" "coverage" ".git" ".svn" "website" ".polly_recordings"))
-			    (files ("*.jpg" "*.png" "*.log" "*.zip" "*~" "#*#" ".gitkeep" "newrelic-browser.js"))))
+			    (files ("*.jpg" "*.png" "*.log" "*.zip" "*~" "#*#" ".gitkeep" "newrelic-browser.js" "index.js"))))
 
 (setq fiplr-root-markers '(".git" ".svn" ".emacs.fiplr"))
 
@@ -354,6 +354,12 @@
      (add-hook 'js2-mode-hook #'prettier-js-mode)
      ))
 
+(eval-after-load 'typescript-mode
+  '(progn
+     (add-hook 'typescript-mode-hook #'add-node-modules-path)
+     (add-hook 'typescript-mode-hook #'prettier-js-mode)
+     ))
+
 ;; START ember-template-lint config
 ;; from https://gist.github.com/bistin/f964de48fd16a42b8bfd7d0bde82be6c via @rwjblue
 (defun flycheck-parse-ember-template-lint (output checker buffer)
@@ -408,4 +414,3 @@ the BUFFER that was checked respectively.
 
 (setq-default typescript-indent-level 2)
 (setq-default css-indent-offset 2)
-
